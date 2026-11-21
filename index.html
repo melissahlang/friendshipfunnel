@@ -1,330 +1,538 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Melly · Make Real Friends in Bangkok</title>
-<meta name="description" content="Friendship workshops, a playbook and a free 3-minute quiz for expats and remote workers in Bangkok. Find where your friendships leak and fix it.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+<title>Where’s Your Friendship Leak?</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Noto+Sans+Thai:wght@400;500;700&display=swap">
 <style>
 :root{--bg:#FFF9F4;--ink:#1B2A4A;--coral:#FF5A3C;--coral-d:#C8361B;--peach:#FF8A6E;--blush:#FFB8A6;--cream:#FFE3D8;--mut:#5A6478;--mut2:#3E4A60;--white:#FFFFFF;color-scheme:light}
 *{box-sizing:border-box}
-html{background:var(--bg);scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pulse{animation:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
-h1,h2,h3,.brand{font-family:"Outfit",sans-serif;font-weight:800;margin:0;letter-spacing:-.02em}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "DM Sans","Noto Sans Thai",system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+h1,h2,h3,.brand{font-family:"Outfit","Noto Sans Thai","PingFang SC","Microsoft YaHei",sans-serif;font-weight:800;margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
 a{color:var(--ink)}
-:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.k{margin:0;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-section,[id]{scroll-margin-top:24px}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-
-/* buttons */
-.pill{display:inline-flex;justify-content:center;align-items:center;min-height:56px;border-radius:999px;border:2px solid var(--ink);font-weight:700;font-size:17px;text-decoration:none;text-align:center;padding:10px 26px;transition:transform .15s}
-.pill:hover{transform:translateY(-2px)}
+.wrap{max-width:520px;margin:0 auto;padding:0 20px}
+.hero{position:relative;background:var(--peach);border-bottom:2px solid var(--ink);padding-bottom:34px}
+.deco{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.deco i{position:absolute;right:-40px;top:-30px;width:170px;height:170px;border-radius:50%;background:var(--coral)}
+.hero .wrap{position:relative}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;min-height:62px}
+.brand{font-size:17px;line-height:1.1;letter-spacing:-.01em}
+.eyebrow{margin:26px 0 0;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.big{margin:8px 0 0;font-size:clamp(34px,10vw,48px);line-height:.98;letter-spacing:-.035em}
+.lead{margin:14px 0 0;font-size:16px;line-height:1.5}
+.nick{display:inline-block;margin-top:14px;background:var(--white);border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px}
+.body{padding-top:24px;padding-bottom:40px}
+.pill{display:flex;justify-content:center;align-items:center;width:100%;min-height:56px;border-radius:999px;border:2px solid var(--ink);font-weight:700;font-size:17px;text-decoration:none;text-align:center;padding:10px 20px}
 .pill.navy{background:var(--ink);color:var(--bg)}
-.pill.white{background:var(--white);color:var(--ink)}
-.pill.coral{background:var(--coral);color:var(--ink)}
-.pill.sm{min-height:44px;font-size:15px;padding:6px 18px}
-@media (prefers-reduced-motion:reduce){.pill{transition:none}.pill:hover{transform:none}}
-
-/* page layout: hero + sections on the left, link tiles on the right */
-.layout{display:grid;grid-template-columns:minmax(0,1fr)}
-@media (min-width:900px){
- .layout{grid-template-columns:minmax(0,1fr) 22%}
- .hero{grid-column:1;grid-row:1}
- .rest{grid-column:1;grid-row:2}
- .rail{grid-column:2;grid-row:1/3;align-self:start;position:sticky;top:0;height:100vh;border-left:2px solid var(--ink)}
-}
-
-/* hero */
-.hero{position:relative;overflow:hidden;background:var(--peach);border-bottom:2px solid var(--ink);min-height:100vh;min-height:100svh;display:flex;flex-direction:column;padding:24px 20px 28px}
-.hero .blob{position:absolute;right:-90px;top:-110px;width:300px;height:300px;border-radius:50%;background:var(--coral)}
-.hero .blob2{position:absolute;left:-70px;bottom:-90px;width:200px;height:200px;border-radius:50%;background:var(--blush);opacity:.7}
-.hero>*{position:relative}
-.brand{font-size:22px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;align-self:flex-start}
-.brand svg{flex:none}
-.hero h1{margin-top:26px;font-size:clamp(40px,11vw,96px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase}
-.funnel{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 0}
-.funnel svg{width:clamp(220px,min(60vw,42vh),360px);height:auto;display:block;overflow:visible;font-family:"Outfit",sans-serif}
-.hbot{display:flex;flex-direction:column;gap:18px}
-.status{margin:0;font-size:18px;line-height:1.5;max-width:440px}
-.status b{font-weight:800}
-.block{display:inline-flex;align-items:center;justify-content:center;min-height:60px;padding:10px 30px;background:var(--ink);color:var(--bg);border:2px solid var(--ink);font-weight:700;font-size:18px;text-decoration:none;text-align:center;transition:background .15s,color .15s}
-.block:hover{background:var(--bg);color:var(--ink)}
-@media (min-width:900px){
- .hero{padding:32px 44px 36px}
- .hero h1{margin:24px 0 0 12%;font-size:clamp(48px,min(6vw,9vh),92px)}
- .funnel{padding:16px 0}
- .hbot{flex-direction:row;align-items:center;gap:36px}
-}
-
-/* link tiles */
-.rail{display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid var(--ink)}
-.tile{position:relative;display:block;min-height:96px;padding:20px 22px;font-size:20px;font-weight:500;text-decoration:none;border-bottom:2px solid var(--ink)}
-.tile:nth-child(even){border-right:2px solid var(--ink)}
-.tile:first-child{grid-column:1/-1}
-.tile:nth-last-child(-n+2){border-bottom:0}
-.tile .ar{position:absolute;right:20px;bottom:16px;font-size:24px;opacity:0;transform:translateX(-8px);transition:opacity .15s,transform .15s}
-.tile:hover .ar,.tile:focus-visible .ar{opacity:1;transform:none}
-.tile:focus-visible{outline-offset:-5px}
-.t1{background:var(--white);color:var(--ink)}
-.t2{background:var(--coral);color:var(--ink)}
-.t3{background:var(--cream);color:var(--ink)}
-.t4{background:var(--ink);color:var(--bg)}
-.t5{background:var(--coral-d);color:var(--bg)}
-@media (min-width:900px){
- .rail{display:flex;flex-direction:column;border-bottom:0}
- .tile{flex:1;min-height:0;padding:28px 30px;font-size:22px;border-right:0!important;border-bottom:2px solid var(--ink)!important}
- .tile:last-child{border-bottom:0!important}
-}
-@media (prefers-reduced-motion:reduce){.tile .ar,.block{transition:none}}
-
-/* sections */
-.sec{padding:64px 0}
-.sec h2{font-size:clamp(30px,6.4vw,44px);line-height:1.04;letter-spacing:-.035em;margin-top:10px;max-width:720px}
-.sec .intro{margin:14px 0 0;font-size:17px;max-width:620px;color:var(--mut2)}
-.k.c{color:var(--coral-d)}
-.grid{display:grid;gap:14px;margin-top:30px}
-@media (min-width:720px){.grid.g3{grid-template-columns:repeat(3,1fr)}.grid.g2{grid-template-columns:repeat(2,1fr)}.grid.g4{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:1000px){.grid.g4{grid-template-columns:repeat(4,1fr)}}
-.card{background:var(--white);border:2px solid var(--ink);border-radius:22px;padding:22px}
-.card h3{font-size:21px;line-height:1.2}
-.card p{margin:8px 0 0;font-size:15px;line-height:1.6}
-.quote{font-family:"Outfit",sans-serif;font-weight:700;font-size:20px;line-height:1.25;margin:0!important}
-.quote::before{content:"“";display:block;font-size:46px;line-height:.8;color:var(--coral)}
-.card .sub{color:var(--mut)}
-
-/* stages */
-.stage{position:relative;padding-top:60px}
-.stage .num{position:absolute;top:18px;left:22px;width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:"Outfit",sans-serif;font-weight:800}
-.stage .nk{font-weight:700;color:var(--coral-d)}
-.reveal{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
-.reveal p{margin:0;color:var(--mut2)}
-
-/* quiz band */
-.band{position:relative;overflow:hidden;background:var(--ink);color:var(--bg);border-radius:32px;padding:40px 26px}
-.band .o1{position:absolute;right:-40px;bottom:-50px;width:180px;height:180px;border-radius:50%;background:var(--coral)}
-.band .o2{position:absolute;right:110px;top:-36px;width:70px;height:70px;border-radius:50%;background:var(--peach)}
-.band>*{position:relative}
-.band .k{color:var(--peach)}
-.band h2{color:var(--bg);margin-top:10px;font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:-.035em;max-width:640px}
-.band p.d{margin:14px 0 0;max-width:560px;font-size:17px;color:var(--cream)}
-.band .pill{margin-top:24px}
-.ticks{display:flex;flex-wrap:wrap;gap:8px 18px;margin:18px 0 0;padding:0;list-style:none;font-size:14px;font-weight:700;color:var(--cream)}
-.ticks li::before{content:"✓ ";color:var(--peach)}
-@media (min-width:860px){.band{padding:56px 54px}}
-
-/* offers */
-.offer{display:flex;flex-direction:column;border-radius:28px;padding:28px}
-.offer.tint{background:var(--cream)}
-.offer .tag{align-self:flex-start;background:var(--ink);color:var(--bg);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
-.offer h3{margin-top:14px;font-size:28px;letter-spacing:-.03em}
-.offer ul{margin:14px 0 0;padding:0;list-style:none}
-.offer li{position:relative;padding-left:26px;margin-top:8px;font-size:15px}
-.offer li::before{content:"";position:absolute;left:0;top:5px;width:14px;height:14px;border-radius:50%;background:var(--coral);border:2px solid var(--ink)}
-.offer .pill{margin-top:auto;width:100%}
-.offer .sp{flex:1;min-height:22px}
-.note{margin:10px 0 0;min-height:1.2em;text-align:center;font-size:14px;font-weight:700;color:var(--coral-d)}
-
-/* about */
-.about{display:grid;gap:28px;align-items:center}
-.ph{width:200px;height:200px;border-radius:50%;border:2px solid var(--ink);background:var(--coral);display:flex;align-items:center;justify-content:center;font-family:"Outfit",sans-serif;font-weight:800;font-size:84px;color:var(--bg);box-shadow:10px 10px 0 var(--ink);overflow:hidden}
-.ph img{width:100%;height:100%;object-fit:cover}
-.about p{margin:14px 0 0;font-size:17px;max-width:600px}
-@media (min-width:820px){.about{grid-template-columns:auto 1fr;gap:56px}.ph{width:260px;height:260px;font-size:110px}}
-
-/* faq */
-details{background:var(--white);border:2px solid var(--ink);border-radius:18px;padding:0 20px;margin-top:10px}
-summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:60px;font-weight:700;font-size:17px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:"Outfit",sans-serif;font-size:20px;line-height:1}
-details[open] summary::after{content:"–";background:var(--peach)}
-details p{margin:0 0 18px;color:var(--mut2)}
-.faq{max-width:760px}
-
-/* footer */
-footer{background:var(--peach);border-top:2px solid var(--ink);padding:40px 0 32px;margin-top:24px}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px}
-footer nav{display:flex;flex-wrap:wrap;gap:18px;font-weight:700;font-size:15px}
-footer small{display:block;width:100%;color:var(--mut2);font-size:13px}
+.pill.peach{background:var(--peach);color:var(--ink);border-color:var(--peach)}
+.meta{margin:12px 0 0;text-align:center;font-size:14px;color:var(--mut)}
+.more{display:block;width:100%;margin-top:14px;background:none;border:0;padding:8px 0;text-align:center;font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.cap{margin:12px 0 0;text-align:center;font-size:14px;color:var(--mut)}
+.funnel{margin:28px auto 0;max-width:400px}
 .pulse{animation:pulse 1.8s ease-in-out infinite}
-@keyframes pulse{50%{opacity:.35}}
+@keyframes pulse{50%{stroke-opacity:.3}}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}}
+.funnel svg{width:100%;height:auto;display:block;overflow:visible;font-family:"Outfit","Noto Sans Thai","PingFang SC","Microsoft YaHei",sans-serif}
+/* language dropdown */
+.lang{position:relative;flex:none}
+.ld{display:flex;align-items:center;gap:8px;min-height:44px;background:var(--white);color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:0 14px;font-size:14px;font-weight:700}
+svg.fl{border-radius:2px;box-shadow:0 0 0 1px rgba(27,42,74,.35);flex:none}
+.lm{position:absolute;top:100%;right:0;margin:8px 0 0;padding:6px;list-style:none;background:var(--white);border:2px solid var(--ink);border-radius:16px;min-width:170px;z-index:20;box-shadow:0 10px 24px rgba(27,42,74,.18)}
+.lm[hidden]{display:none}
+.lm button{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;background:transparent;border:0;border-radius:10px;padding:0 10px;font-size:15px;text-align:left}
+.lm button:hover,.lm button.on{background:var(--cream)}
+.lm button.on{font-weight:700}
+/* question + goal screens */
+.qwrap{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding-bottom:28px}
+.prow{display:flex;align-items:center;gap:12px;margin-top:10px}
+.circle{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:transparent;display:flex;align-items:center;justify-content:center;flex:none}
+.prog{flex:1;height:12px;border-radius:999px;background:var(--white);border:2px solid var(--ink);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--peach);transition:width .3s}
+.pcount{font-size:14px;font-weight:700;white-space:nowrap}
+.qtext{margin:36px 0 0;font-size:clamp(26px,7.4vw,32px);line-height:1.12;letter-spacing:-.03em}
+.gh{margin:12px 0 0;font-size:15px;color:var(--mut)}
+.answers{margin-top:0;padding-top:32px;display:flex;flex-direction:column;gap:10px}
+.qwrap .answers .scale{margin-top:0}
+.ans{display:flex;align-items:center;gap:14px;min-height:56px;padding:8px 16px;background:var(--white);border:2px solid var(--ink);border-radius:18px;text-align:left;font-size:16px;font-weight:500;width:100%}
+.ans b{width:30px;height:30px;border-radius:50%;background:var(--bg);border:1.5px solid var(--ink);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex:none}
+.ans .t{display:flex;flex-direction:column}
+.ans .t strong{font-weight:700}
+.ans .t small{font-size:14px;font-weight:400;color:var(--mut)}
+.ans:hover{background:var(--cream)}
+.ans.sel{background:var(--ink);color:var(--bg);font-weight:700}
+.ans.sel .t small{color:var(--cream)}
+.ans.sel b{background:var(--peach);color:var(--ink);border-color:var(--peach)}
+.scale{display:flex;justify-content:space-between;gap:8px}
+.sc{flex:1;max-width:72px;aspect-ratio:1;border-radius:50%;border:2px solid var(--ink);background:var(--white);font-family:"Outfit",sans-serif;font-weight:800;font-size:22px;padding:0}
+.sc:hover{background:var(--cream)}
+.sc.sel{background:var(--ink);color:var(--bg)}
+.ends{display:flex;justify-content:space-between;gap:16px;margin-top:12px;font-size:13px;line-height:1.3;color:var(--mut2)}
+.ends span{max-width:45%}.ends span:last-child{text-align:right}
+.hint{margin:8px 0 0;text-align:center;font-size:13px;color:var(--mut)}
+/* results */
+.sec{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.bar{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;margin:8px 0}
+.bar.leak{font-weight:700}
+.bar span{width:132px;flex:none;line-height:1.25}
+.bar div{flex:1;height:14px;background:var(--white);border:1.5px solid var(--ink);border-radius:999px;overflow:hidden}
+.bar div i{display:block;height:100%}
+.gnote{margin:12px 0 0;font-size:14px;line-height:1.5;color:var(--mut2)}
+.card{background:var(--white);border:2px solid var(--ink);border-radius:22px;padding:20px;margin-top:14px}
+.card.tint{background:var(--cream)}
+.card.trap{border-left:10px solid var(--coral)}
+.card h2{font-size:22px;line-height:1.2}
+.card h3{font-size:20px;line-height:1.2}
+.card p{margin:8px 0 0;font-size:15px;line-height:1.6}
+.card p.nk{margin-top:4px;font-weight:700;color:var(--coral-d)}
+.yours{display:inline-block;margin-left:8px;background:var(--ink);color:var(--bg);border-radius:999px;padding:1px 10px;font-size:12px;vertical-align:middle}
+.allp h2{margin:26px 0 0;font-size:24px}
+.cta{position:relative;overflow:hidden;margin-top:28px;background:var(--ink);color:var(--bg);border-radius:28px;padding:26px 22px}
+.cta .deco2{position:absolute;right:-30px;bottom:-30px;width:130px;height:130px;border-radius:50%;background:var(--coral)}
+.cta>*{position:relative}
+.cta .k{margin:0;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--peach)}
+.cta h2{margin:8px 0 0;font-size:28px;line-height:1.08;letter-spacing:-.03em}
+.cta p.d{margin:12px 0 0;font-size:15px;line-height:1.55}
+.cta .pill{margin-top:20px}
+.note{margin:10px 0 0;font-size:13px;color:var(--cream);text-align:center;min-height:1em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.sq{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:16px;border:2px solid var(--ink);font-weight:700;font-size:15px;text-decoration:none;padding:6px 10px;text-align:center}
+.sq.coral{background:var(--coral);color:var(--ink)}
+.sq.plain{background:transparent}
+.disc{margin:26px 0 0;font-size:12px;line-height:1.5;color:var(--mut);text-align:center}
+html:lang(th) h1,html:lang(th) h2,html:lang(th) h3,html:lang(zh-Hans) h1,html:lang(zh-Hans) h2,html:lang(zh-Hans) h3{letter-spacing:0;line-height:1.3}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
 </style></head>
-<body>
-
-<div class="layout">
-
-<header class="hero" id="top">
- <i class="blob"></i><i class="blob2"></i>
- <a class="brand" href="#top">
-  <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M2 4h22l-6 10h-10z" fill="#FF5A3C" stroke="#1B2A4A" stroke-width="2" stroke-linejoin="round"/><path d="M9 15h8l-2 7h-4z" fill="#1B2A4A"/></svg>
-  <span>Melly</span>
- </a>
- <h1>Making friends <br>shouldn’t be <br>this hard</h1>
- <div class="funnel" id="funnel"></div>
- <div class="hbot">
-  <p class="status"><b>Free quiz. 3 minutes, no sign-up.</b> Find where your friendships leak, for expats and remote workers in Bangkok.</p>
-  <a class="block" href="quiz.html">Find my friendship leak</a>
- </div>
-</header>
-
-<nav class="rail" aria-label="Main">
- <a class="tile t1" href="quiz.html">Quiz<span class="ar" aria-hidden="true">→</span></a>
- <a class="tile t2" href="#offers">Playbook<span class="ar" aria-hidden="true">→</span></a>
- <a class="tile t3" href="#workshops">Workshops<span class="ar" aria-hidden="true">→</span></a>
- <a class="tile t4" href="#about">About<span class="ar" aria-hidden="true">→</span></a>
- <a class="tile t5" href="#faq">FAQ<span class="ar" aria-hidden="true">→</span></a>
-</nav>
-
-<div class="rest">
-
-<section class="sec">
- <div class="wrap">
-  <p class="k c">Sound familiar?</p>
-  <h2>Great chat. Big smiles. Then you never see them again.</h2>
-  <div class="grid g3">
-   <div class="card"><p class="quote">I meet loads of people at events. None of them stick.</p></div>
-   <div class="card"><p class="quote">My work friends, gym friends and brunch friends have never met.</p></div>
-   <div class="card"><p class="quote">I have people to hang out with, but no one I’d call when things go wrong.</p></div>
-  </div>
- </div>
-</section>
-
-<section class="sec" id="how" style="padding-top:8px">
- <div class="wrap">
-  <p class="k c">How friendships form</p>
-  <h2>Every friendship passes through four steps.</h2>
-  <p class="intro">Think of it as a funnel. New people come in at the top, real friends come out the bottom. Most of us leak at one stage more than the others.</p>
-  <div class="grid g4">
-   <div class="card stage"><span class="num" style="background:#FF5A3C">1</span><h3>Volume</h3><p class="nk">The Creature of Routine</p><p>Your days are full, just not of new people.</p></div>
-   <div class="card stage"><span class="num" style="background:#FF8A6E">2</span><h3>Repeated Exposure</h3><p class="nk">The Driveby Friend</p><p>You meet lots of people. You just don’t see the same ones often enough for it to stick.</p></div>
-   <div class="card stage"><span class="num" style="background:#FFB8A6">3</span><h3>Integration</h3><p class="nk">The Compartmentalizer</p><p>Your friends live in separate boxes: work, gym, brunch.</p></div>
-   <div class="card stage"><span class="num" style="background:#FFE3D8">4</span><h3>Deepen</h3><p class="nk">The “I’m Good” Friend</p><p>You show up for friends, but rarely let them see the real you.</p></div>
-  </div>
-  <div class="reveal"><p>Which one are you?</p><a class="pill coral sm" href="quiz.html">Find out in 3 minutes</a></div>
- </div>
-</section>
-
-<section class="sec" style="padding-top:8px">
- <div class="wrap">
-  <div class="band">
-   <i class="o1"></i><i class="o2"></i>
-   <p class="k">The Friendship Funnel Quiz</p>
-   <h2>Find your leak. Get one small fix to try today.</h2>
-   <p class="d">20 quick questions about how you meet, see and open up to people. You’ll get your stage, why it happens, a micro-fix and the trap to avoid.</p>
-   <ul class="ticks"><li>Free</li><li>About 3 minutes</li><li>No sign-up</li><li>English, ไทย, 中文</li></ul>
-   <a class="pill coral" href="quiz.html">Start the quiz</a>
-  </div>
- </div>
-</section>
-
-<section class="sec" id="offers">
- <div class="wrap">
-  <p class="k c">Ready to go further?</p>
-  <h2>Two ways to plug the leak.</h2>
-  <div class="grid g2">
-   <div class="card offer">
-    <span class="tag">Self-paced</span>
-    <h3>The Friendship Funnel Playbook</h3>
-    <p>The quiz gives you one micro-fix. The playbook has the plumber’s whole toolkit.</p>
-    <ul>
-     <li>Deep dives on all four leaks</li>
-     <li>The research behind each stage</li>
-     <li>Step-by-step fixes and common mistakes</li>
-    </ul>
-    <div class="sp"></div>
-    <a class="pill navy" id="pb" href="#">Get the playbook</a>
-    <p class="note" id="pbn" aria-live="polite"></p>
-   </div>
-   <div class="card offer tint" id="workshops">
-    <span class="tag">In person · Bangkok</span>
-    <h3>Live workshops</h3>
-    <p>Practise the skills with other people who are in the same boat, in a room where everyone came to make friends.</p>
-    <ul>
-     <li>Small groups, real conversations</li>
-     <li>Work on the stage where you leak</li>
-     <li>Leave with people to see again</li>
-    </ul>
-    <div class="sp"></div>
-    <a class="pill coral" id="ws" href="#">See upcoming dates</a>
-    <p class="note" id="wsn" aria-live="polite"></p>
-   </div>
-  </div>
- </div>
-</section>
-
-<section class="sec" id="about" style="padding-top:8px">
- <div class="wrap about">
-  <!-- Replace the "M" with <img src="melly.jpg" alt="Melly"> when there's a photo -->
-  <div class="ph" aria-hidden="true">M</div>
-  <div>
-   <p class="k c">Hi, I’m Melly</p>
-   <h2 style="font-size:clamp(30px,6vw,42px);margin-top:10px;letter-spacing:-.035em;line-height:1.05">I help expats in Bangkok turn acquaintances into real friends.</h2>
-   <!-- Melissa: swap in your own story here (the roommate story would be perfect) -->
-   <p>Moving somewhere new resets your social life to zero, and nobody hands you a manual for making friends as an adult. So I made one. The Friendship Funnel breaks friendship into four steps you can actually work on, one small fix at a time.</p>
-   <div class="btns"><a class="pill navy" href="quiz.html">Take the quiz</a></div>
-  </div>
- </div>
-</section>
-
-<section class="sec" id="faq" style="padding-top:8px">
- <div class="wrap faq">
-  <p class="k c">Questions</p>
-  <h2>Good to know</h2>
-  <details><summary>Is the quiz really free?</summary><p>Yes. No email, no sign-up. You get your result straight away.</p></details>
-  <details><summary>Who is this for?</summary><p>Adult expats and remote workers in Bangkok, whether you landed last month or have been here for years and want a closer circle.</p></details>
-  <details><summary>What if I already have friends?</summary><p>Great! Pick “I’m happy with my social life” in the quiz and you’ll get a snapshot of your strongest stage instead of a leak.</p></details>
-  <details><summary>Is this therapy?</summary><p>No. The quiz is a reflection tool, not a clinical assessment. The workshops and playbook are practical and friendly, not clinical.</p></details>
- </div>
-</section>
-
-<footer>
- <div class="wrap">
-  <a class="brand" href="#">Melly</a>
-  <nav aria-label="Footer">
-   <a href="quiz.html">The quiz</a>
-   <a href="#offers">Workshops &amp; playbook</a>
-   <a href="#about">About</a>
-  </nav>
-  <small>© <span id="yr">2026</span> Melly · Friendships in Bangkok</small>
- </div>
-</footer>
-</div>
-</div>
-
+<body><div id="app"></div>
 <script>
-// Fill these in when the links exist. Empty = button shows a "coming soon" message.
+// Set this to the checkout / sales page link for the playbook
 var PLAYBOOK_URL="";
-var WORKSHOP_URL=""; // e.g. a booking page, LINE, or Instagram link
 
-function wire(id,url,msg){
- var a=document.getElementById(id),n=document.getElementById(id+"n");
- if(url){a.href=url;a.target="_blank";a.rel="noopener"}
- else a.onclick=function(e){e.preventDefault();n.textContent=msg};
-}
-wire("pb",PLAYBOOK_URL,"The playbook is almost ready. Check back very soon.");
-wire("ws",WORKSHOP_URL,"New dates are coming soon. Take the quiz in the meantime!");
-document.getElementById("yr").textContent=new Date().getFullYear();
+var ENAMES=["Volume","Repeated Exposure","Integration","Deepen"];
+var SCOL=["#FF5A3C","#FF8A6E","#FFB8A6","#FFE3D8"];
+// Which funnel stages count for each goal (0 Volume, 1 Repeated Exposure, 2 Integration, 3 Deepen)
+var GSCOPE=[[0,1],[1,2,3],[1,3],[0,1,2,3],[0,1,2,3]];
+var SNAP=4; // goal index for "I'm happy with my social life"
 
+var TXT={
+en:{
+ tag:"Free quiz · 3 minutes · no sign-up",
+ title:"Where’s your friendship leak?",
+ sub:"Making friends as an adult is hard. If you’re struggling, you’re probably not “bad” at it. More likely, one step in how friendships form is leaking.<br><br>Take this quiz to find where your new connections slip away, and get one small fix to try today.",
+ caption:"Every friendship passes through these four steps. A leak is where yours tend to fizzle out.",
+ start:"Find my leak",
+ meta:"20 questions · about 3 minutes",
+ browse:"Just want to see the four leaks and their fixes? Browse them here.",
+ goalEy:"Before we start",
+ goalQ:"What do you want your social life to look like?",
+ goalHint:"Pick the one closest to what you want right now. It shapes your result.",
+ goals:[
+  {t:"People to do things with",d:"Coffee, classes, a night out."},
+  {t:"A close-knit group",d:"The people I’d invite to my birthday."},
+  {t:"A few people who really get me",d:"Someone to call after a bad day."},
+  {t:"Not sure yet",d:"A bit of everything."},
+  {t:"I’m happy with my social life",d:"Just curious how I’m doing."}],
+ back:"Back",
+ hint:"Tap an answer to keep going. No wrong answers, only honest ones.",
+ yourLeakIn:"Your leak is in",
+ snapIn:"Your strongest stage is",
+ youAre:function(n){return "You’re “"+n+"”"},
+ yourFunnel:"Your funnel",
+ leakTag:"leak",
+ strongTag:"strongest",
+ hLeak:"The Leak",
+ hWhy:"Why It Happens and Why It Matters",
+ hFix:"One Micro-Fix to Try Today",
+ hTrap:"Trap to avoid",
+ hStrong:"Your strongest stage",
+ hLevel:"If you ever want to level up",
+ levelP:function(n,k){return "Your lowest-scoring stage is <b>"+n+"</b> ("+k+"). One small thing to try:"},
+ note:function(x,g){return "Your lowest score overall was <b>"+x+"</b>, but that matters less for what you want (“"+g+"”)."},
+ lead:function(l,n){return "Your biggest leak is "+l+": <b>"+n+"</b>. "},
+ scale:["Rarely / Not like me","Not often","Sometimes","Often","Consistently / Very true"],
+ moreLink:"Curious about the other three leaks? Look at you, social over-achiever. See them all here.",
+ moreH:"All four leaks",
+ yours:"yours",
+ microLbl:"Micro-fix",
+ trapLbl:"Trap",
+ browseEy:"Browse",
+ browseH:"The four friendship leaks",
+ browseP:"Every friendship passes through these four steps. Here’s where each one tends to leak, and a free fix for each.",
+ takeQuiz:"Take the quiz",
+ ctaK:"Want more?",
+ ctaH:"That was one micro-fix. The playbook has the plumber’s whole toolkit.",
+ ctaP:function(n){return "Deep dives on all four leaks, the research behind them, and step-by-step fixes. Your chapter is "+n+", but leaks travel."},
+ ctaB:"Get the playbook",
+ soon:"The playbook is almost ready. Check back very soon.",
+ share:"Share my leak",
+ copied:"Copied!",
+ shareText:function(n,k){return "My friendship leak is "+n+" ("+k+"). Where’s yours?"},
+ shareSnap:function(n){return "My strongest friendship stage is "+n+". Where’s yours?"},
+ retake:"Retake",
+ disc:"Lower scores show where friendships are most likely to stall. This is a reflection tool, not a clinical assessment.",
+ stages:[
+ {n:"Volume",nick:"The Creature of Routine",tg:"Your days are full, just not of new people.",str:"You put yourself out there and meet people.",lead:"at the top of the Friendship Funnel",
+  leak:"A Volume leak means your days are filled mostly with people you already know, so you rarely cross paths with potential new friends.",
+  why:"Volume leaks are common for busy adults. Work, family, and errands can fill an entire day: the office, then the gym, then dinner, then a call with your mom or bedtime with the kids. There’s little room left to meet anyone new. But meeting new people regularly is how a social circle grows. Each new person is a chance to find someone whose company you enjoy and to see things from a different perspective.",
+  fix:"Sign up for one recurring weekly activity: a new gym class, a board game night, a church service, or anything else that appeals to you. The point is to regularly put yourself somewhere you don’t know anyone yet.",
+  trap:"Only going where you already know someone.",
+  q:["I go to a social event, class, or group activity most weeks.","I meet someone new several times a week.","In the past month, I’ve tried a new group, class, or event.","I say yes to invitations, even when I’m tired or unsure.","I start conversations with new people instead of waiting for them to talk to me first."]},
+ {n:"Repeated Exposure",nick:"The Driveby Friend",tg:"You meet lots of people. You just don’t see the same ones often enough for it to stick.",str:"You keep showing up and become a familiar face.",lead:"at the second level of the Friendship Funnel",
+  leak:"A Repeated Exposure leak means you meet new people, but you rarely see the same people often enough for familiarity to build. Most acquaintances stay acquaintances because the first conversation was also the last.",
+  why:"Friendships grow from time spent together, not from one great conversation. Research suggests it takes dozens of hours together before an acquaintance becomes a friend, and we tend to like people more the more we see them. That’s why so many close friends start as the people who happened to be around: roommates, coworkers, classmates, the regulars at the same gym.<br><br>A Repeated Exposure leak is common when your social life is made of one-off encounters: a new event each week, a great chat, and then you never cross paths again. Nothing went wrong. There just wasn’t a second or third time to build on. You also don’t need to ask for a number on day one. When you keep showing up in the same place, a follow-up feels natural later.",
+  fix:"Pick one activity or group that meets regularly (a weekly class, a run club, a board game night, a volunteer shift) and commit to going for the next 4 to 8 weeks, even on days you don’t feel like it. Treat it like a standing appointment. The goal isn’t to make a best friend in week one. It’s to become a familiar face. Around the third or fourth session, someone will say “hey, you’re back!” That’s when familiarity starts turning into friendship.",
+  trap:"Dropping a group after one or two visits because it didn’t click right away. Familiarity takes a few weeks.",
+  q:["I regularly spend time with the same people through where I live, work, study, or my hobbies.","I regularly attend the same activity or group, so I see the same people week after week.","When I meet someone I like, I tend to see them again within a couple of weeks, planned or not.","After a good first chat, I follow up and suggest meeting again.","When a plan falls through, I try at least once to reschedule instead of letting it fade."]},
+ {n:"Integration",nick:"The Compartmentalizer",tg:"Your friends live in separate boxes: work, gym, brunch.",str:"Your friends get to see many sides of you.",lead:"at the third level of the Friendship Funnel",
+  leak:"An Integration leak means you meet new people and see them again, but your friendships stay in one setting. You see work friends at work, gym friends at the gym, and brunch friends at brunch, so they rarely get to know you in other parts of your life.",
+  why:"Integration leaks happen subtly, and they’re not always a problem. When you click with someone in a gym class, keeping it in the gym can feel right. Integration only becomes important when you both want the friendship to go deeper. Seeing each other in a new context shows different sides of you both and gives you new things to bond over.",
+  fix:"Think of two friends from different parts of your life who might get along, and invite them to a meal or drinks together. You can also invite one friend to do something outside your usual routine, like a walk instead of a workout. Either one creates a new setting for the friendship.",
+  trap:"Forcing two friend groups together before either side feels settled.",
+  q:["With my friends, I do a mix of things (meals, activities, trips), not the same routine every time.","I introduce my friends to each other and to my wider circle.","In the past couple of months, I’ve tried something new with a friend.","I’ve seen my newer friends both in groups and one-on-one.","My friends know people in other parts of my life, such as my family, coworkers, or other friends."]},
+ {n:"Deepen",nick:"The “I’m Good” Friend",tg:"You show up for friends, but rarely let them see the real you.",str:"You let people really get to know you.",lead:"at the bottom of the Friendship Funnel",
+  leak:"A Deepen leak means you make friends and see them in different settings, but you don’t always share the vulnerability that lets a friendship grow closer.",
+  why:"Deepen leaks can happen when expressing emotions feels difficult or unnatural. Cultural and gender norms shape how people open up, and a bad past experience can make you hesitant to try again. It’s worth working on because vulnerability is the foundation of close friendships. It replaces guarded, surface-level conversation with real trust.",
+  fix:"Comfort with vulnerability builds slowly, so start small. The next time a friend asks how you’re doing, pause before answering. Instead of “I’m good” or a rundown of your week, describe how you actually feel. It may feel awkward at first, and it gets easier with practice.",
+  trap:"Oversharing early to rush closeness. Depth works best as a gradual back-and-forth.",
+  q:["I share real things going on in my life, not just surface updates.","I ask friends for help or support when I need it.","When someone asks how I am, I answer honestly instead of just saying “good.”","After hanging out with someone new, I feel like they know as much about me as I know about them.","When a friend shares something, I ask follow-up questions that go beyond small talk."]}
+ ]},
+th:{
+ tag:"แบบทดสอบฟรี · 3 นาที · ไม่ต้องสมัคร",
+ title:"รอยรั่วในมิตรภาพของคุณอยู่ตรงไหน?",
+ sub:"การหาเพื่อนในวัยผู้ใหญ่เป็นเรื่องยาก ถ้าคุณรู้สึกว่ามันลำบาก คุณอาจไม่ได้ “แย่” เรื่องนี้เลย มีแนวโน้มมากกว่าว่าขั้นหนึ่งในกระบวนการสร้างมิตรภาพกำลังรั่ว<br><br>ลองทำแบบทดสอบนี้เพื่อดูว่าความสัมพันธ์ใหม่ ๆ ของคุณหลุดหายไปตรงไหน พร้อมวิธีแก้เล็ก ๆ ที่ลองได้วันนี้",
+ caption:"มิตรภาพทุกความสัมพันธ์ผ่านสี่ขั้นนี้ รอยรั่วคือจุดที่ความสัมพันธ์ของคุณมักเงียบหายไป",
+ start:"ค้นหารอยรั่วของฉัน",
+ meta:"20 ข้อ · ใช้เวลาประมาณ 3 นาที",
+ browse:"แค่อยากดูรอยรั่วทั้งสี่แบบและวิธีแก้? ดูได้ที่นี่",
+ goalEy:"ก่อนเริ่ม",
+ goalQ:"คุณอยากให้ชีวิตสังคมของคุณเป็นอย่างไร?",
+ goalHint:"เลือกข้อที่ใกล้เคียงกับสิ่งที่คุณต้องการตอนนี้ที่สุด ข้อนี้จะส่งผลต่อผลลัพธ์ของคุณ",
+ goals:[
+  {t:"คนที่ไปทำกิจกรรมด้วยกัน",d:"กาแฟ คลาสเรียน ออกไปเที่ยวกลางคืน"},
+  {t:"กลุ่มเพื่อนที่สนิทกัน",d:"คนที่ฉันอยากชวนมางานวันเกิด"},
+  {t:"คนไม่กี่คนที่เข้าใจฉันจริง ๆ",d:"คนที่โทรหาได้ในวันแย่ ๆ"},
+  {t:"ยังไม่แน่ใจ",d:"อยากได้ทั้งหมดนิดหน่อย"},
+  {t:"ฉันพอใจกับชีวิตสังคมของฉัน",d:"แค่อยากรู้ว่าฉันเป็นอย่างไรบ้าง"}],
+ back:"ย้อนกลับ",
+ hint:"แตะคำตอบเพื่อไปต่อ ไม่มีคำตอบที่ผิด มีแต่คำตอบที่จริงใจ",
+ yourLeakIn:"รอยรั่วของคุณอยู่ที่",
+ snapIn:"ขั้นที่แข็งแรงที่สุดของคุณคือ",
+ youAre:function(n){return "คุณคือ “"+n+"”"},
+ yourFunnel:"กรวยของคุณ",
+ leakTag:"รอยรั่ว",
+ strongTag:"แข็งแรงที่สุด",
+ hLeak:"รอยรั่ว",
+ hWhy:"ทำไมถึงเกิดขึ้น และทำไมถึงสำคัญ",
+ hFix:"ทางแก้เล็ก ๆ ที่ลองได้วันนี้",
+ hTrap:"กับดักที่ควรเลี่ยง",
+ hStrong:"ขั้นที่แข็งแรงที่สุดของคุณ",
+ hLevel:"ถ้าวันหนึ่งอยากพัฒนาต่อ",
+ levelP:function(n,k){return "ขั้นที่คะแนนต่ำสุดของคุณคือ <b>"+n+"</b> ("+k+") ลองทำสิ่งเล็ก ๆ นี้:"},
+ note:function(x,g){return "คะแนนต่ำสุดโดยรวมของคุณคือ <b>"+x+"</b> แต่เรื่องนี้สำคัญน้อยกว่าสำหรับสิ่งที่คุณต้องการ (“"+g+"”)"},
+ lead:function(l,n){return "รอยรั่วที่ใหญ่ที่สุดของคุณอยู่ที่"+l+": <b>"+n+"</b> "},
+ scale:["แทบไม่เคย / ไม่ใช่ฉันเลย","ไม่ค่อยบ่อย","บางครั้ง","บ่อย","สม่ำเสมอ / ใช่เลย"],
+ moreLink:"อยากรู้เรื่องรอยรั่วอีกสามแบบไหม? โอ้โห นักเข้าสังคมสายขยัน ดูทั้งหมดได้ที่นี่",
+ moreH:"รอยรั่วทั้งสี่แบบ",
+ yours:"ของคุณ",
+ microLbl:"ทางแก้เล็ก ๆ",
+ trapLbl:"กับดัก",
+ browseEy:"ดูทั้งหมด",
+ browseH:"รอยรั่วในมิตรภาพทั้งสี่แบบ",
+ browseP:"มิตรภาพทุกความสัมพันธ์ผ่านสี่ขั้นนี้ ต่อไปนี้คือจุดที่แต่ละขั้นมักรั่ว พร้อมทางแก้ฟรีของแต่ละขั้น",
+ takeQuiz:"ทำแบบทดสอบ",
+ ctaK:"อยากได้มากกว่านี้ไหม?",
+ ctaH:"นั่นเป็นแค่ทางแก้เล็ก ๆ หนึ่งอย่าง Playbook มีกล่องเครื่องมือช่างประปาครบชุด",
+ ctaP:function(n){return "เจาะลึกทั้งสี่รอยรั่ว งานวิจัยเบื้องหลัง และวิธีแก้ทีละขั้น บทของคุณคือ "+n+" แต่รอยรั่วมักลุกลามไปที่อื่นด้วย"},
+ ctaB:"รับ Playbook",
+ soon:"Playbook ใกล้เสร็จแล้ว กลับมาดูใหม่เร็ว ๆ นี้นะ",
+ share:"แชร์รอยรั่วของฉัน",
+ copied:"คัดลอกแล้ว!",
+ shareText:function(n,k){return "รอยรั่วในมิตรภาพของฉันคือ "+n+" ("+k+") แล้วของคุณล่ะ?"},
+ shareSnap:function(n){return "ขั้นที่แข็งแรงที่สุดในมิตรภาพของฉันคือ "+n+" แล้วของคุณล่ะ?"},
+ retake:"ทำใหม่",
+ disc:"คะแนนที่ต่ำบ่งบอกว่ามิตรภาพของคุณมีแนวโน้มสะดุดตรงไหนมากที่สุด นี่เป็นเครื่องมือสำหรับการสะท้อนตนเอง ไม่ใช่การประเมินทางคลินิก",
+ stages:[
+ {n:"Volume (ปริมาณ)",nick:"คนติดกิจวัตร",tg:"วันของคุณเต็มไปหมด แต่ไม่ได้เต็มไปด้วยคนใหม่ ๆ",str:"คุณกล้าออกไปพบปะผู้คน",lead:"ด้านบนสุดของกรวยมิตรภาพ",
+  leak:"รอยรั่วด้าน Volume หมายความว่าแต่ละวันของคุณเต็มไปด้วยคนที่รู้จักอยู่แล้วเป็นส่วนใหญ่ จึงแทบไม่ได้พบเจอคนที่อาจเป็นเพื่อนใหม่",
+  why:"รอยรั่วด้าน Volume พบได้บ่อยในผู้ใหญ่ที่ชีวิตวุ่น ๆ งาน ครอบครัว และธุระต่าง ๆ กินเวลาไปได้ทั้งวัน ออฟฟิศ ต่อด้วยยิม มื้อเย็น แล้วโทรหาแม่หรือกล่อมลูกนอน จนแทบไม่เหลือที่ว่างให้พบใครใหม่ ๆ แต่การพบปะผู้คนใหม่ ๆ อย่างสม่ำเสมอคือวิธีที่วงสังคมเติบโต คนใหม่แต่ละคนคือโอกาสที่จะได้พบคนที่คุณอยู่ด้วยแล้วสบายใจ และได้มองโลกจากมุมที่ต่างออกไป",
+  fix:"ลงชื่อทำกิจกรรมประจำสัปดาห์ละหนึ่งอย่าง เช่น คลาสยิมใหม่ ค่ำคืนเล่นบอร์ดเกม ไปโบสถ์ หรืออะไรก็ได้ที่คุณสนใจ ประเด็นคือให้คุณไปอยู่ในที่ที่ยังไม่รู้จักใครอย่างสม่ำเสมอ",
+  trap:"ไปแต่ที่ที่มีคนรู้จักอยู่แล้ว",
+  q:["ฉันไปงานสังสรรค์ คลาส หรือกิจกรรมกลุ่มเกือบทุกสัปดาห์","ฉันได้พบคนใหม่หลายครั้งต่อสัปดาห์","ในเดือนที่ผ่านมา ฉันลองเข้ากลุ่ม คลาส หรืองานใหม่ ๆ","ฉันตอบรับคำชวน แม้จะเหนื่อยหรือไม่แน่ใจ","ฉันเป็นฝ่ายเริ่มคุยกับคนใหม่ แทนที่จะรอให้เขาเริ่มคุยกับฉันก่อน"]},
+ {n:"Repeated Exposure (พบซ้ำ)",nick:"เพื่อนแบบแวะผ่าน",tg:"คุณพบคนมากมาย แต่ไม่ได้เจอคนเดิมบ่อยพอให้ความสัมพันธ์เติบโต",str:"คุณไปซ้ำอย่างสม่ำเสมอและกลายเป็นหน้าคุ้นตา",lead:"ระดับที่สองของกรวยมิตรภาพ",
+  leak:"รอยรั่วด้าน Repeated Exposure หมายความว่าคุณพบคนใหม่ แต่ไม่ค่อยได้เจอคนเดิมซ้ำบ่อยพอให้ความคุ้นเคยก่อตัวขึ้น คนรู้จักส่วนใหญ่จึงยังเป็นแค่คนรู้จัก เพราะบทสนทนาครั้งแรกก็กลายเป็นครั้งสุดท้ายด้วย",
+  why:"มิตรภาพเติบโตจากเวลาที่ได้อยู่ด้วยกัน ไม่ใช่จากบทสนทนาดี ๆ เพียงครั้งเดียว งานวิจัยชี้ว่าต้องใช้เวลาอยู่ด้วยกันหลายสิบชั่วโมงกว่าคนรู้จักจะกลายเป็นเพื่อน และเรามักชอบคนมากขึ้นเมื่อได้เจอเขาบ่อยขึ้น นี่คือเหตุผลที่เพื่อนสนิทหลายคนเริ่มจากคนที่บังเอิญอยู่ใกล้ตัว เช่น เพื่อนร่วมบ้าน เพื่อนร่วมงาน เพื่อนร่วมชั้น หรือขาประจำที่ยิมเดียวกัน<br><br>รอยรั่วด้าน Repeated Exposure พบได้บ่อยเมื่อชีวิตสังคมของคุณประกอบด้วยการพบกันแบบครั้งเดียว ไปงานใหม่ทุกสัปดาห์ คุยกันสนุก แล้วไม่ได้เจอกันอีก ไม่ได้มีอะไรผิดพลาด เพียงแต่ไม่มีครั้งที่สองหรือครั้งที่สามให้ต่อยอด และคุณไม่จำเป็นต้องขอเบอร์ตั้งแต่วันแรก เมื่อคุณไปที่เดิมซ้ำ ๆ การติดต่อกันภายหลังจะเป็นไปอย่างเป็นธรรมชาติ",
+  fix:"เลือกกิจกรรมหรือกลุ่มที่จัดเป็นประจำหนึ่งอย่าง (คลาสรายสัปดาห์ ชมรมวิ่ง ค่ำคืนเล่นบอร์ดเกม หรือกิจกรรมอาสา) แล้วตั้งใจไปให้ครบ 4 ถึง 8 สัปดาห์ แม้วันที่ไม่อยากไปก็ตาม ถือว่าเป็นนัดประจำ เป้าหมายไม่ใช่การได้เพื่อนสนิทตั้งแต่สัปดาห์แรก แต่คือการเป็นหน้าคุ้นตา ราวครั้งที่สามหรือสี่ จะมีคนทักว่า “อ้าว มาอีกแล้ว!” นั่นคือจังหวะที่ความคุ้นเคยเริ่มกลายเป็นมิตรภาพ",
+  trap:"เลิกไปกลุ่มหลังไปแค่หนึ่งหรือสองครั้ง เพราะยังไม่รู้สึกถูกคอทันที ความคุ้นเคยต้องใช้เวลาไม่กี่สัปดาห์",
+  q:["ฉันใช้เวลากับคนกลุ่มเดิมเป็นประจำ ผ่านที่ที่ฉันอยู่ ทำงาน เรียน หรืองานอดิเรก","ฉันไปทำกิจกรรมหรือเข้ากลุ่มเดิมเป็นประจำ จึงได้เจอคนกลุ่มเดิมทุกสัปดาห์","เมื่อพบคนที่ถูกใจ ฉันมักได้เจอเขาอีกภายในสองสามสัปดาห์ ไม่ว่าจะนัดหรือบังเอิญ","หลังจากคุยกันถูกคอครั้งแรก ฉันติดต่อไปและชวนนัดเจอกันอีก","เมื่อแผนล่ม ฉันพยายามนัดใหม่อย่างน้อยหนึ่งครั้ง แทนที่จะปล่อยให้เงียบหายไป"]},
+ {n:"Integration (เชื่อมโยง)",nick:"คนแยกกล่องเพื่อน",tg:"เพื่อนของคุณอยู่คนละกล่อง: ที่ทำงาน ยิม บรันช์",str:"เพื่อน ๆ ได้เห็นคุณหลายด้าน",lead:"ระดับที่สามของกรวยมิตรภาพ",
+  leak:"รอยรั่วด้าน Integration หมายความว่าคุณพบคนใหม่และได้เจอกันซ้ำ แต่มิตรภาพยังอยู่ในบริบทเดียว คุณเจอเพื่อนที่ทำงานแค่ที่ทำงาน เพื่อนที่ยิมแค่ที่ยิม เพื่อนที่กินบรันช์แค่ตอนบรันช์ พวกเขาจึงไม่ค่อยได้รู้จักคุณในด้านอื่น ๆ ของชีวิต",
+  why:"รอยรั่วด้าน Integration เกิดขึ้นแบบแนบเนียนและไม่ได้เป็นปัญหาเสมอไป เมื่อคุณถูกคอกับใครสักคนในคลาสยิม การให้มิตรภาพอยู่แค่ในยิมก็รู้สึกลงตัวดี การเชื่อมโยงจะสำคัญก็ต่อเมื่อทั้งสองฝ่ายอยากให้มิตรภาพลึกซึ้งขึ้น การได้อยู่ด้วยกันในบริบทใหม่ ๆ ช่วยให้เห็นอีกด้านของกันและกัน และมีเรื่องใหม่ ๆ ให้ผูกพันกัน",
+  fix:"ลองนึกถึงเพื่อนสองคนจากส่วนต่าง ๆ ของชีวิตที่น่าจะเข้ากันได้ แล้วชวนมากินข้าวหรือดื่มด้วยกัน หรือจะชวนเพื่อนสักคนไปทำอะไรนอกกิจวัตรปกติ เช่น เดินเล่นแทนการออกกำลังกายก็ได้ ทั้งสองแบบช่วยสร้างบริบทใหม่ให้มิตรภาพ",
+  trap:"ดึงเพื่อนสองกลุ่มมารวมกันโดยที่ทั้งสองฝ่ายยังไม่สนิทใจ",
+  q:["ฉันทำกิจกรรมหลากหลายกับเพื่อน (กินข้าว ทำกิจกรรม ท่องเที่ยว) ไม่ใช่แค่รูปแบบเดิม ๆ ทุกครั้ง","ฉันแนะนำเพื่อน ๆ ให้รู้จักกัน และแนะนำให้รู้จักกับวงสังคมที่กว้างขึ้นของฉัน","ในช่วงสองสามเดือนที่ผ่านมา ฉันลองทำอะไรใหม่ ๆ กับเพื่อน","ฉันเคยเจอเพื่อนใหม่ ๆ ทั้งในกลุ่มและแบบตัวต่อตัว","เพื่อนของฉันรู้จักคนในส่วนอื่น ๆ ของชีวิตฉัน เช่น ครอบครัว เพื่อนร่วมงาน หรือเพื่อนกลุ่มอื่น"]},
+ {n:"Deepen (เปิดใจลึกซึ้ง)",nick:"เพื่อนสาย “สบายดี”",tg:"คุณอยู่ข้างเพื่อนเสมอ แต่ไม่ค่อยให้เขาเห็นตัวตนจริง",str:"คุณให้คนอื่นได้รู้จักตัวตนจริงของคุณ",lead:"ด้านล่างสุดของกรวยมิตรภาพ",
+  leak:"รอยรั่วด้าน Deepen หมายความว่าคุณมีเพื่อนและใช้เวลากับเพื่อนในบริบทที่หลากหลาย แต่บางครั้งยังไม่กล้าเปิดเผยความรู้สึกที่แท้จริง ซึ่งเป็นสิ่งที่ทำให้มิตรภาพใกล้ชิดขึ้น",
+  why:"รอยรั่วด้าน Deepen อาจเกิดขึ้นเมื่อการแสดงอารมณ์รู้สึกยากหรือไม่เป็นธรรมชาติ บรรทัดฐานทางวัฒนธรรมและเพศมีผลต่อวิธีที่คนเปิดใจ และประสบการณ์แย่ ๆ ในอดีตอาจทำให้ลังเลที่จะลองอีกครั้ง เรื่องนี้คุ้มค่าที่จะพัฒนา เพราะการเปิดใจเป็นรากฐานของมิตรภาพที่ใกล้ชิด มันเปลี่ยนบทสนทนาที่ระแวดระวังและผิวเผินให้เป็นความไว้วางใจที่แท้จริง",
+  fix:"ความสบายใจกับการเปิดใจค่อย ๆ สร้างขึ้นได้ เริ่มจากเรื่องเล็ก ๆ ครั้งหน้าที่เพื่อนถามว่าเป็นไงบ้าง ลองหยุดคิดก่อนตอบ แทนที่จะตอบว่า “สบายดี” หรือเล่าสรุปสัปดาห์ ลองบอกว่าตอนนี้รู้สึกอย่างไรจริง ๆ ตอนแรกอาจรู้สึกเก้อ แต่จะง่ายขึ้นเมื่อฝึกบ่อย ๆ",
+  trap:"เปิดเผยมากเกินไปตั้งแต่แรกเพื่อให้สนิทเร็ว ความลึกซึ้งได้ผลที่สุดเมื่อค่อย ๆ แลกเปลี่ยนกันไปมา",
+  q:["ฉันเล่าเรื่องจริงที่เกิดขึ้นในชีวิต ไม่ใช่แค่อัปเดตผิวเผิน","ฉันขอความช่วยเหลือหรือกำลังใจจากเพื่อนเมื่อต้องการ","เมื่อมีคนถามว่าเป็นอย่างไรบ้าง ฉันตอบตามความจริง แทนที่จะตอบแค่ “สบายดี”","หลังไปใช้เวลากับคนใหม่ ฉันรู้สึกว่าเขารู้จักฉันพอ ๆ กับที่ฉันรู้จักเขา","เมื่อเพื่อนเล่าเรื่องอะไรให้ฟัง ฉันถามต่อลึกกว่าการคุยเล่นทั่วไป"]}
+ ]},
+zh:{
+ tag:"免费测验 · 3 分钟 · 无需注册",
+ title:"你的友谊漏在哪里？",
+ sub:"成年后交朋友很难。如果你觉得很吃力，你多半并不是“不擅长”。更可能是友谊形成过程中的某一步在漏水。<br><br>做这个测验，找出你的新关系在哪里流失，并得到一个今天就能试的小调整。",
+ caption:"每段友谊都要经过这四步。漏点就是你的关系容易不了了之的地方。",
+ start:"找出我的漏点",
+ meta:"20 题 · 约 3 分钟",
+ browse:"只想看四种漏点和对应的小调整？点这里浏览。",
+ goalEy:"开始之前",
+ goalQ:"你希望自己的社交生活是什么样子？",
+ goalHint:"选一个最接近你现在想要的。它会影响你的结果。",
+ goals:[
+  {t:"一起做事的人",d:"喝咖啡、上课、夜晚出去玩。"},
+  {t:"一个关系紧密的小圈子",d:"我会邀请来参加生日聚会的人。"},
+  {t:"几个真正懂我的人",d:"糟糕的一天后可以打电话的人。"},
+  {t:"还不确定",d:"各方面都想要一点。"},
+  {t:"我对现在的社交生活很满意",d:"只是好奇自己的情况。"}],
+ back:"返回",
+ hint:"点一个答案继续。没有错误答案，只有诚实的答案。",
+ yourLeakIn:"你的漏点在",
+ snapIn:"你最强的一环是",
+ youAre:function(n){return "你是“"+n+"”"},
+ yourFunnel:"你的漏斗",
+ leakTag:"漏点",
+ strongTag:"最强",
+ hLeak:"漏点",
+ hWhy:"为什么会发生，为什么重要",
+ hFix:"今天就能试的小调整",
+ hTrap:"要避开的陷阱",
+ hStrong:"你最强的一环",
+ hLevel:"如果你想更进一步",
+ levelP:function(n,k){return "你得分最低的是 <b>"+n+"</b>（"+k+"）。可以试试这个小调整："},
+ note:function(x,g){return "你总体得分最低的是 <b>"+x+"</b>，但对你想要的（“"+g+"”）来说，它没那么重要。"},
+ lead:function(l,n){return "你最大的漏点在友谊漏斗的"+l+"：<b>"+n+"</b>。"},
+ scale:["很少 / 不像我","不太常","有时","经常","一直如此 / 非常符合"],
+ moreLink:"好奇另外三种漏点吗？瞧瞧你，社交小学霸。点这里看全部。",
+ moreH:"全部四种漏点",
+ yours:"你的",
+ microLbl:"小调整",
+ trapLbl:"陷阱",
+ browseEy:"浏览",
+ browseH:"四种友谊漏点",
+ browseP:"每段友谊都要经过这四步。下面是每一步容易漏在哪里，以及各自的免费小调整。",
+ takeQuiz:"做测验",
+ ctaK:"想要更多？",
+ ctaH:"那只是一个小调整。手册里有水管工的整套工具箱。",
+ ctaP:function(n){return "深入讲解全部四个漏点、背后的研究和一步步的修补方法。你的章节是 "+n+"，但漏点会蔓延。"},
+ ctaB:"获取手册",
+ soon:"手册即将推出，请很快回来看看。",
+ share:"分享我的漏点",
+ copied:"已复制！",
+ shareText:function(n,k){return "我的友谊漏点是 "+n+"（"+k+"）。你的呢？"},
+ shareSnap:function(n){return "我最强的友谊环节是 "+n+"。你的呢？"},
+ retake:"重新测验",
+ disc:"分数越低，说明友谊越容易在那一环停滞。这是一个自我反思的工具，不是临床评估。",
+ stages:[
+ {n:"Volume（接触量）",nick:"例行公事星人",tg:"你的日子很满，只是满的不是新面孔。",str:"你敢于走出去认识人。",lead:"顶端",
+  leak:"Volume 漏点意味着你的日子大多被已经认识的人填满，很少接触到可能成为新朋友的人。",
+  why:"Volume 漏点在忙碌的成年人中很常见。工作、家庭和各种杂事很容易占满一整天：先是办公室，然后健身房，接着晚饭，再给妈妈打电话或哄孩子睡觉，几乎没有空间去认识新的人。但定期认识新朋友，正是社交圈成长的方式。每一个新面孔，都是一次发现和自己合得来的人、并从不同角度看世界的机会。",
+  fix:"报名一个每周固定的活动：新的健身课、桌游之夜、教会礼拜，或任何你感兴趣的事。重点是定期把自己放到一个你还不认识任何人的地方。",
+  trap:"只去已经认识人的地方。",
+  q:["我几乎每周都会参加社交活动、课程或小组活动。","我每周都会遇到好几个新认识的人。","过去一个月里，我尝试过新的小组、课程或活动。","即使累了或不确定，我也会答应邀约。","我会主动和新认识的人开口聊天，而不是等对方先开口。"]},
+ {n:"Repeated Exposure（重复接触）",nick:"路过型朋友",tg:"你认识很多人，只是很少反复见到同一批人，关系就长不起来。",str:"你会一再出现，成为大家熟悉的面孔。",lead:"第二层",
+  leak:"Repeated Exposure 漏点意味着你认识新朋友，但很少足够频繁地见到同一批人，熟悉感建立不起来。大多数相识的人之所以一直只是熟人，是因为第一次聊天也成了最后一次。",
+  why:"友谊来自相处的时间，而不是一次聊得很好的对话。研究表明，从熟人变成朋友需要相处几十个小时，而且我们往往越常见到一个人，就越喜欢他。这就是为什么许多亲密朋友一开始只是碰巧在身边的人：室友、同事、同学，或同一家健身房的常客。<br><br>当你的社交生活由一次性的相遇组成时，Repeated Exposure 漏点就很常见：每周参加一个新活动，聊得很愉快，然后再也没有碰面。这并没有出什么问题，只是没有第二次、第三次可以继续积累。你也不需要第一天就要联系方式。当你不断出现在同一个地方，之后自然而然就能联系上了。",
+  fix:"选一个定期举行的活动或小组（每周的课程、跑步社团、桌游之夜或志愿者轮班），承诺接下来 4 到 8 周都去参加，即使有些天不想去。把它当作固定的约会。目标不是第一周就交到最好的朋友，而是成为一张熟悉的面孔。大约在第三或第四次，会有人说“咦，你又来啦！”那一刻，熟悉感就开始变成友谊。",
+  trap:"只去一两次就放弃一个小组，因为没有马上聊得来。熟悉感需要几周的时间。",
+  q:["我会通过居住、工作、学习或兴趣爱好，定期和同一批人相处。","我会定期参加同一个活动或小组，所以每周都能见到同一批人。","遇到喜欢的人，我通常会在几周内再见到他们，不管是约好的还是碰巧遇到。","聊得来的第一次见面之后，我会主动联系并约下一次。","计划泡汤时，我至少会尝试一次重新约时间，而不是任其不了了之。"]},
+ {n:"Integration（融合）",nick:"分格收纳型朋友",tg:"你的朋友活在不同的盒子里：公司、健身房、早午餐。",str:"你的朋友能看到你的许多面。",lead:"第三层",
+  leak:"Integration 漏点意味着你认识新朋友，也会再次见面，但友谊始终停留在同一个场景。同事朋友只在公司见，健身房朋友只在健身房见，早午餐朋友只在吃早午餐时见，所以他们很少有机会在你生活的其他部分认识你。",
+  why:"Integration 漏点往往不易察觉，也不一定是问题。当你和健身课上的某个人很投缘时，让这段友谊留在健身房里可能正合适。只有当双方都希望友谊更进一步时，融合才变得重要。在新的场景里相处，能看到彼此不同的一面，也会多出新的共同话题。",
+  fix:"想想生活中不同圈子里可能合得来的两位朋友，邀请他们一起吃顿饭或喝一杯。你也可以邀请一位朋友做点平时不会做的事，比如散步而不是健身。两种方式都能为这段友谊创造新的场景。",
+  trap:"在双方都还没自在之前，就硬把两个朋友圈凑在一起。",
+  q:["我和朋友会做各种不同的事（吃饭、活动、旅行），而不是每次都一成不变。","我会把朋友们互相介绍，也介绍给我更大的社交圈。","过去几个月里，我和朋友尝试过一些新事物。","对于较新的朋友，我既在群体中见过他们，也单独见过面。","我的朋友认识我生活中其他方面的人，比如我的家人、同事或其他朋友。"]},
+ {n:"Deepen（深化）",nick:"“我挺好”型朋友",tg:"你总会出现在朋友身边，却很少让他们看到真实的你。",str:"你会让别人真正了解你。",lead:"底部",
+  leak:"Deepen 漏点意味着你交到了朋友，也会在不同场景里和他们相处，但你并不总是展现出让关系更深的那份坦诚。",
+  why:"当表达情绪让人觉得困难或不自然时，就可能出现 Deepen 漏点。文化和性别规范会影响人们打开心扉的方式，过去不愉快的经历也可能让你不敢再试。这值得去改善，因为坦诚是亲密友谊的基础。它能把防备、停留在表面的交谈，变成真正的信任。",
+  fix:"对坦诚的自在感需要慢慢培养，所以从小处开始。下次朋友问你最近怎么样时，先停一下再回答。不要只说“挺好的”或罗列这一周做了什么，试着说出你真实的感受。一开始可能会觉得别扭，多练习就会越来越容易。",
+  trap:"为了加快亲近而过早地过度袒露。亲密感最好是循序渐进、互相回应。",
+  q:["我会分享生活中真实发生的事，而不只是表面的近况。","我需要时会向朋友寻求帮助或支持。","有人问我最近怎么样时，我会如实回答，而不是只说“挺好的”。","和新认识的人相处过后，我觉得他们对我的了解，和我对他们的了解差不多。","朋友分享事情时，我会问一些超出闲聊的后续问题。"]}
+ ]}
+};
+var LANGS=["en","th","zh"];
+var HTMLLANG={en:"en",th:"th",zh:"zh-Hans"};
+var NAMES={en:"English",th:"ไทย",zh:"中文"};
+var FL='<svg class="fl" viewBox="0 0 30 20" width="24" height="16" aria-hidden="true">';
+var us='';for(var u=0;u<13;u++){us+='<rect y="'+(u*20/13)+'" width="30" height="'+(20/13)+'" fill="'+(u%2?'#fff':'#b22234')+'"/>'}
+var FLAGS={
+ en:FL+us+'<rect width="12" height="10.77" fill="#3c3b6e"/></svg>',
+ th:FL+'<rect width="30" height="20" fill="#a51931"/><rect y="3.33" width="30" height="13.34" fill="#f4f5f8"/><rect y="6.67" width="30" height="6.66" fill="#2d2a4a"/></svg>',
+ zh:FL+'<rect width="30" height="20" fill="#de2910"/><polygon fill="#ffde00" points="5,2 5.68,4.07 7.85,4.07 6.09,5.36 6.76,7.43 5,6.15 3.24,7.43 3.91,5.36 2.15,4.07 4.32,4.07"/><circle fill="#ffde00" cx="10" cy="2" r=".6"/><circle fill="#ffde00" cx="12" cy="4" r=".6"/><circle fill="#ffde00" cx="12" cy="7" r=".6"/><circle fill="#ffde00" cx="10" cy="9" r=".6"/></svg>'
+};
+var CHEV='<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var ARROW='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>';
 
-// Same funnel illustration as the quiz start page (quiz.html funnelSVG)
-(function(){
- var K='#1B2A4A',drop='M0 -14C6 -4 9 2 9 6A9 9 0 0 1 -9 6C-9 2 -6 -4 0 -14Z',p1='',p2='',drops='',pills='';
- [[150,40,'#FF8A6E'],[205,22,'#FFE3D8'],[262,48,'#FF5A3C'],[318,26,'#FFB8A6'],[365,52,'#FFF9F4']].forEach(function(p){var x=p[0],y=p[1];
-  p1+='<circle cx="'+x+'" cy="'+y+'" r="13" fill="'+p[2]+'"/>';
-  p2+='<circle cx="'+(x-4)+'" cy="'+(y-2)+'" r="1.8"/><circle cx="'+(x+4)+'" cy="'+(y-2)+'" r="1.8"/><path d="M'+(x-5)+' '+(y+3)+'q5 4 10 0" fill="none" stroke="'+K+'" stroke-width="1.8" stroke-linecap="round"/>'});
- [[442,150,1],[456,182,.6],[80,228,1],[66,258,.6],[364,306,1],[376,336,.6],[156,384,1],[144,414,.6]].forEach(function(d){drops+='<path transform="translate('+d[0]+' '+d[1]+')'+(d[2]<1?' scale(.6)':'')+'" d="'+drop+'"/>'});
- [[462,128],[-36,196],[386,284],[56,350]].forEach(function(q,k){pills+='<g'+(k===1?' class="pulse"':'')+'><rect x="'+q[0]+'" y="'+q[1]+'" width="58" height="28" rx="14" fill="'+(k===1?'#FFFFFF':'#FFF9F4')+'" stroke="'+K+'" stroke-width="2"/><text x="'+(q[0]+29)+'" y="'+(q[1]+19)+'" fill="'+K+'">leak?</text></g>'});
- document.getElementById("funnel").innerHTML='<svg viewBox="-40 0 560 560" role="img" aria-label="A funnel with four stages: Volume, Repeated Exposure, Integration and Deepen. People drop in at the top, drips leak out the sides, and two friends come out the bottom.">'
+var lang="en";
+try{var sv=localStorage.getItem("ffq-lang");if(sv&&TXT[sv])lang=sv;else{var nl=(navigator.language||"").toLowerCase();if(nl.indexOf("th")==0)lang="th";else if(nl.indexOf("zh")==0)lang="zh"}}catch(e){}
+
+var view="start",A=[],i=0,G=3,locked=false;
+var app=document.getElementById("app");
+function T(){return TXT[lang]}
+function flat(){var Q=[];T().stages.forEach(function(s,si){s.q.forEach(function(t){Q.push({s:si,t:t})})});return Q}
+
+function funnelSVG(hl,star){
+ hl=(hl==null?-1:hl);
+ var LK={en:"leak?",th:"รั่ว?",zh:"漏？"}[lang],RF={en:"real friends",th:"เพื่อนแท้",zh:"真朋友"}[lang];
+ var K='#1B2A4A',drop='M0 -14C6 -4 9 2 9 6A9 9 0 0 1 -9 6C-9 2 -6 -4 0 -14Z';
+ var people=[[150,40,'#FF8A6E'],[205,22,'#FFE3D8'],[262,48,'#FF5A3C'],[318,26,'#FFB8A6'],[365,52,'#FFF9F4']],p1='',p2='';
+ people.forEach(function(p){var x=p[0],y=p[1];p1+='<circle cx="'+x+'" cy="'+y+'" r="13" fill="'+p[2]+'"/>';p2+='<circle cx="'+(x-4)+'" cy="'+(y-2)+'" r="1.8"/><circle cx="'+(x+4)+'" cy="'+(y-2)+'" r="1.8"/><path d="M'+(x-5)+' '+(y+3)+'q5 4 10 0" fill="none" stroke="'+K+'" stroke-width="1.8" stroke-linecap="round"/>'});
+ var dim=function(s){return hl<0||s===hl?1:.28};
+ var BP=['40,90 440,90 401,168 79,168','79,168 401,168 362.5,245 117.5,245','117.5,245 362.5,245 323.5,323 156.5,323','156.5,323 323.5,323 285,400 195,400'],overlay='';
+ if(hl>=0){BP.forEach(function(pt,k){overlay+=k===hl?'<polygon class="pulse" points="'+pt+'" fill="none" stroke="#FF5A3C" stroke-width="10" stroke-linejoin="round"/><polygon points="'+pt+'" fill="none" stroke="'+K+'" stroke-width="4" stroke-linejoin="round"/>':'<polygon points="'+pt+'" fill="#FFF9F4" fill-opacity=".66"/>'})}
+ var drops='';[[442,150,1,0],[456,182,.6,0],[80,228,1,1],[66,258,.6,1],[364,306,1,2],[376,336,.6,2],[156,384,1,3],[144,414,.6,3]].forEach(function(d){if(hl>=0&&d[3]!==hl)return;drops+='<path opacity="'+dim(d[3])+'" transform="translate('+d[0]+' '+d[1]+')'+(d[2]<1?' scale(.6)':'')+'" d="'+drop+'"/>'});
+ var pills='';[[462,128,0],[-36,196,1],[386,284,2],[56,350,3]].forEach(function(q){if(hl>=0&&q[2]!==hl)return;pills+='<g opacity="'+dim(q[2])+'"><rect x="'+q[0]+'" y="'+q[1]+'" width="58" height="28" rx="14" fill="'+(hl===q[2]?'#FF5A3C':'#FFF9F4')+'" stroke="'+K+'" stroke-width="2"/><text x="'+(q[0]+29)+'" y="'+(q[1]+19)+'" fill="'+K+'">'+(hl===q[2]&&star?'★':LK)+'</text></g>'});
+ return '<svg viewBox="-40 0 560 560" role="img" aria-label="A funnel with four stages: Volume, Repeated Exposure, Integration and Deepen. People drop in at the top, drips leak out the sides, and two friends come out the bottom.">'
  +'<g stroke="'+K+'" stroke-width="2.5">'+p1+'</g><g fill="'+K+'">'+p2+'</g>'
  +'<g stroke="'+K+'" stroke-width="3" stroke-linejoin="round"><polygon points="40,90 440,90 401,168 79,168" fill="#FF5A3C"/><polygon points="79,168 401,168 362.5,245 117.5,245" fill="#FF8A6E"/><polygon points="117.5,245 362.5,245 323.5,323 156.5,323" fill="#FFB8A6"/><polygon points="156.5,323 323.5,323 285,400 195,400" fill="#FFE3D8"/><polygon points="195,400 285,400 264,440 216,440" fill="'+K+'"/><ellipse cx="240" cy="90" rx="200" ry="20" fill="#FFF9F4"/></g>'
  +'<g fill="'+K+'" text-anchor="middle" font-weight="700"><text x="240" y="137" font-size="22">Volume</text><text x="240" y="214" font-size="19">Repeated Exposure</text><text x="240" y="291" font-size="19">Integration</text><text x="240" y="368" font-size="18">Deepen</text></g>'
- +'<g fill="'+K+'">'+drops+'</g><g font-size="15" font-weight="700" text-anchor="middle">'+pills+'</g>'
+ +overlay+'<g fill="'+K+'">'+drops+'</g><g font-size="15" font-weight="700" text-anchor="middle">'+pills+'</g>'
  +'<path transform="translate(240 468)" d="M0 8C-13 -2 -10 -15 0 -8C10 -15 13 -2 0 8Z" fill="#FF5A3C" stroke="'+K+'" stroke-width="2"/>'
  +'<g stroke="'+K+'" stroke-width="2.5"><circle cx="222" cy="508" r="17" fill="#FF5A3C"/><circle cx="258" cy="508" r="17" fill="#FFB8A6"/></g>'
  +'<g fill="'+K+'"><circle cx="217" cy="505" r="2"/><circle cx="227" cy="505" r="2"/><circle cx="253" cy="505" r="2"/><circle cx="263" cy="505" r="2"/></g>'
  +'<g fill="none" stroke="'+K+'" stroke-width="2" stroke-linecap="round"><path d="M215 512q7 6 14 0"/><path d="M251 512q7 6 14 0"/></g>'
- +'<text x="240" y="550" text-anchor="middle" font-size="18" font-weight="700" fill="'+K+'">real friends</text></svg>';
-})();
-</script>
-</body></html>
+ +'<text x="240" y="550" text-anchor="middle" font-size="18" font-weight="700" fill="'+K+'">'+RF+'</text></svg>';
+}
+
+function setLang(l){lang=l;try{localStorage.setItem("ffq-lang",l)}catch(e){}render()}
+function closeMenu(){var m=document.getElementById("lm"),b=document.getElementById("ldb");if(m)m.hidden=true;if(b)b.setAttribute("aria-expanded","false")}
+document.addEventListener("click",function(e){if(!e.target.closest||!e.target.closest("#lang"))closeMenu()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeMenu()});
+
+function topbar(){
+ var h='<div class="top"><span class="brand">The Friendship Funnel Quiz</span><div class="lang" id="lang"><button class="ld" id="ldb" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">'+FLAGS[lang]+'<span>'+NAMES[lang]+'</span>'+CHEV+'</button><ul class="lm" id="lm" role="listbox" hidden>';
+ LANGS.forEach(function(l){h+='<li role="none"><button role="option" data-l="'+l+'" aria-selected="'+(l===lang)+'" class="'+(l===lang?'on':'')+'">'+FLAGS[l]+'<span>'+NAMES[l]+'</span></button></li>'});
+ return h+'</ul></div></div>';
+}
+function bindTop(){
+ var btn=document.getElementById("ldb"),menu=document.getElementById("lm");
+ btn.onclick=function(e){e.stopPropagation();var o=menu.hidden;menu.hidden=!o;btn.setAttribute("aria-expanded",o?"true":"false")};
+ menu.querySelectorAll("button").forEach(function(b){b.onclick=function(){setLang(b.dataset.l)}});
+}
+function render(){
+ document.documentElement.lang=HTMLLANG[lang];
+ document.title=T().title;
+ if(view==="start")showStart();else if(view==="goal")showGoal();else if(view==="q")showQ();else if(view==="leaks")showLeaks();else showResult();
+ bindTop();
+ window.scrollTo(0,0);
+}
+function startQuiz(){A=[];i=0;G=3;view="start";render()}
+
+function showStart(){
+ var t=T();
+ app.innerHTML='<section class="hero"><div class="deco"><i></i></div><div class="wrap">'+topbar()+'<p class="eyebrow">'+t.tag+'</p><h1 class="big">'+t.title+'</h1><p class="lead">'+t.sub+'</p></div></section>'
+ +'<div class="wrap body"><button class="pill navy" id="s">'+t.start+'</button><p class="meta">'+t.meta+'</p><div class="funnel">'+funnelSVG()+'</div><p class="cap">'+t.caption+'</p></div>';
+ document.getElementById("s").onclick=function(){view="goal";render()};
+ }
+function showGoal(){
+ var t=T();
+ var h='<div class="wrap qwrap">'+topbar()+'<div class="prow"><button class="circle" id="b" aria-label="'+t.back+'">'+ARROW+'</button><span class="pcount">'+t.goalEy+'</span></div>'
+ +'<h1 class="qtext">'+t.goalQ+'</h1><p class="gh">'+t.goalHint+'</p><div class="answers">';
+ t.goals.forEach(function(g,k){h+='<button class="ans'+(G===k&&A.goalSet?' sel':'')+'" data-g="'+k+'"><b>'+"ABCDE".charAt(k)+'</b><span class="t"><strong>'+g.t+'</strong><small>'+g.d+'</small></span></button>'});
+ h+='</div></div>';
+ app.innerHTML=h;
+ locked=false;
+ app.querySelectorAll(".ans").forEach(function(b){b.onclick=function(){
+  if(locked)return;locked=true;
+  G=+b.dataset.g;A.goalSet=true;b.classList.add("sel");
+  setTimeout(function(){view="q";i=0;render()},170);
+ }});
+ document.getElementById("b").onclick=function(){view="start";render()};
+}
+function showQ(){
+ var t=T(),Q=flat(),q=Q[i];
+ var h='<div class="wrap qwrap">'+topbar()+'<div class="prow"><button class="circle" id="b" aria-label="'+t.back+'">'+ARROW+'</button><div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="'+Q.length+'" aria-valuenow="'+(i+1)+'"><i style="width:'+((i+1)/Q.length*100)+'%"></i></div><span class="pcount">'+(i+1)+' / '+Q.length+'</span></div>'
+ +'<h1 class="qtext">'+q.t+'</h1><div class="answers">';
+ h+='<div class="scale" role="group">';
+ t.scale.forEach(function(l,k){h+='<button class="sc'+(A[i]===k+1?' sel':'')+'" data-v="'+(k+1)+'" aria-label="'+(k+1)+' – '+l+'">'+(k+1)+'</button>'});
+ h+='</div><div class="ends"><span>'+t.scale[0]+'</span><span>'+t.scale[4]+'</span></div><p class="hint">'+t.hint+'</p></div></div>';
+ app.innerHTML=h;
+ locked=false;
+ app.querySelectorAll(".sc").forEach(function(b){b.onclick=function(){
+  if(locked)return;locked=true;
+  A[i]=+b.dataset.v;b.classList.add("sel");
+  setTimeout(function(){i++;if(i<Q.length){render()}else{view="result";render()}},170);
+ }});
+ document.getElementById("b").onclick=function(){if(i>0){i--;render()}else{view="goal";render()}};
+}
+
+function leaksHTML(mark){
+ var t=T(),h='';
+ t.stages.forEach(function(s,k){
+  h+='<div class="card"><h3>'+s.n+(k===mark?'<span class="yours">'+t.yours+'</span>':'')+'</h3><p class="nk">'+s.nick+'</p><p>'+s.leak+'</p><p><b>'+t.microLbl+':</b> '+s.fix+'</p><p><b>'+t.trapLbl+':</b> '+s.trap+'</p></div>';
+ });
+ return h;
+}
+function showLeaks(){
+ var t=T();
+ app.innerHTML='<section class="hero"><div class="deco"><i></i></div><div class="wrap">'+topbar()+'<p class="eyebrow">'+t.browseEy+'</p><h1 class="big">'+t.browseH+'</h1><p class="lead">'+t.browseP+'</p></div></section>'
+ +'<div class="wrap body">'+leaksHTML(-1)+'<button class="pill navy" id="tq" style="margin-top:24px">'+t.takeQuiz+'</button><button class="more" id="bk">'+t.back+'</button></div>';
+ document.getElementById("tq").onclick=function(){A=[];i=0;G=3;view="goal";render()};
+ document.getElementById("bk").onclick=function(){view="start";render()};
+}
+
+function showResult(){
+ var t=T(),Q=flat(),S=t.stages;
+ var sc=S.map(function(){return 0});
+ Q.forEach(function(q,k){sc[q.s]+=(A[k]||1)});
+ var mx=5*(Q.length/S.length);
+ function pick(idxs,better){var b=idxs[0];idxs.forEach(function(k){if(better(sc[k],sc[b]))b=k});return b}
+ var all=[0,1,2,3],snap=(G===SNAP),scope=GSCOPE[G]||all;
+ var lowAll=pick(all,function(a,b){return a<b});
+ var leak=pick(scope,function(a,b){return a<b});
+ var strong=snap?pick(all,function(a,b){return a>b}):pick(all.filter(function(k){return k!==leak}),function(a,b){return a>b});
+ var focus=snap?strong:leak, lvl=snap?lowAll:leak, s=S[lvl];
+ var bars='';
+ S.forEach(function(x,k){
+  bars+='<div class="bar'+(k==focus?' leak':'')+'"><span>'+x.n+(k==focus?' · '+(snap?t.strongTag:t.leakTag):'')+'</span><div role="img" aria-label="'+sc[k]+'/'+mx+'"><i style="width:'+(sc[k]/mx*100)+'%;background:'+(k==focus?'#1B2A4A':SCOL[k])+'"></i></div></div>';
+ });
+ var hero=snap
+  ?'<p class="eyebrow">'+t.snapIn+'</p><h1 class="big">'+ENAMES[strong]+'</h1><p class="lead">'+S[strong].str+'</p>'
+  :'<p class="eyebrow">'+t.yourLeakIn+'</p><h1 class="big">'+ENAMES[leak]+'</h1><span class="nick">'+t.youAre(S[leak].nick.replace(/“/g,'‘').replace(/”/g,'’'))+'</span><p class="lead">'+S[leak].tg+'</p>';
+ var cards='';
+ if(snap){
+  cards+='<div class="card tint"><h2>'+t.hLevel+'</h2><p>'+t.levelP(s.n,s.nick)+'</p><p>'+s.fix+'</p></div>'
+   +'<div class="card trap"><h2>'+t.hTrap+'</h2><p>'+s.trap+'</p></div>';
+ }else{
+  cards+='<div class="card"><h2>'+t.hLeak+'</h2><p>'+t.lead(s.lead,s.n)+s.leak+'</p></div>'
+   +'<div class="card"><h2>'+t.hWhy+'</h2><p>'+s.why+'</p></div>'
+   +'<div class="card tint"><h2>'+t.hFix+'</h2><p>'+s.fix+'</p></div>'
+   +'<div class="card trap"><h2>'+t.hTrap+'</h2><p>'+s.trap+'</p></div>'
+   +'<div class="card"><h2>'+t.hStrong+'</h2><p><b>'+S[strong].n+'</b>. '+S[strong].str+'</p></div>';
+ }
+ var note=(!snap&&lowAll!==leak)?'<p class="gnote">'+t.note(S[lowAll].n,t.goals[G].t)+'</p>':'';
+ var cta='<div class="cta"><div class="deco2" aria-hidden="true"></div><p class="k">'+t.ctaK+'</p><h2>'+t.ctaH+'</h2><p class="d">'+t.ctaP(s.n)+'</p>';
+ cta+=PLAYBOOK_URL?'<a class="pill peach" href="'+PLAYBOOK_URL+'" target="_blank" rel="noopener">'+t.ctaB+'</a>':'<button class="pill peach" id="pb">'+t.ctaB+'</button><p class="note" id="pn" aria-live="polite"></p>';
+ cta+='</div>';
+ app.innerHTML='<section class="hero"><div class="deco"><i></i></div><div class="wrap">'+topbar()+hero+'</div></section>'
+ +'<div class="wrap body"><p class="sec">'+t.yourFunnel+'</p><div class="funnel" style="margin-top:10px">'+funnelSVG(focus,snap)+'</div><div style="height:18px"></div>'+bars+note
+ +cards
+ +'<button class="more" id="more" aria-expanded="false" aria-controls="allp">'+t.moreLink+'</button>'
+ +'<div class="allp" id="allp" hidden><h2>'+t.moreH+'</h2>'+leaksHTML(lvl)+'</div>'
+ +cta
+ +'<div class="two"><button class="sq coral" id="sh">'+t.share+'</button><button class="sq plain" id="r">'+t.retake+'</button></div>'
+ +'<p class="disc">'+t.disc+'</p></div>';
+ document.getElementById("r").onclick=startQuiz;
+ var pb=document.getElementById("pb");if(pb)pb.onclick=function(){document.getElementById("pn").textContent=t.soon};
+ var mb=document.getElementById("more"),ap=document.getElementById("allp");
+ mb.onclick=function(){var o=ap.hidden;ap.hidden=!o;mb.setAttribute("aria-expanded",o?"true":"false")};
+ var sh=document.getElementById("sh");
+ sh.onclick=function(){
+  var tx=snap?t.shareSnap(ENAMES[strong]):t.shareText(ENAMES[leak],S[leak].nick),url="";try{url=location.href}catch(e){}
+  try{
+   if(navigator.share){navigator.share({text:tx,url:url}).catch(function(){})}
+   else if(navigator.clipboard){navigator.clipboard.writeText(tx+" "+url).then(function(){sh.textContent=t.copied},function(){})}
+  }catch(e){}
+ };
+}
+render();
+</script></body></html>

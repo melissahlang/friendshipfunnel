@@ -3,9 +3,14 @@
 Free diagnostic quiz for Melissa's expat friendship business in Bangkok. It tells people where their friendships "leak" in a four-stage funnel and funnels them to a paid playbook and live workshops. Owner: Melissa ("Melly"). Tone: warm, playful, a little cheeky. Audience: adult expats and remote workers in Bangkok.
 
 ## Stack
-Two pages: `index.html` is the landing page (homepage), `quiz.html` is the quiz. The quiz is a single self-contained file (inline CSS + vanilla JS, no build step, no dependencies). Only external resource is Google Fonts. It was prototyped as a claude.ai artifact; keep it one file unless there is a reason to split.
+Single self-contained file: `index.html` (inline CSS + vanilla JS, no build step, no dependencies). Only external resource is Google Fonts. It was prototyped as a claude.ai artifact; keep it one file unless there is a reason to split.
 
-Run locally: `npm run serve` (or open the HTML files directly). Smoke test (quiz only): `npm install && npx playwright install chromium && npm test`.
+Run locally: `npm run serve` (or open index.html). Smoke test: `npm install && npx playwright install chromium && npm test`.
+
+## GalPal events page (`galpal.html`)
+GalPal is Melissa's all-women's friendship community, Bangkok only for now (more cities "opening soon"). The quiz itself is global and for all genders, so the quiz does not link to GalPal; `galpal.html` links back to the quiz. Single self-contained file, same design tokens, English only, max width 640px. Events live in the `EVENTS` array (each tagged with a funnel step `s`, 0-3, using the quiz's stage colours) with filter chips by step. **All events are mock placeholders** (Dec 2026 to Jan 2027, neighbourhoods not real venues) and the page shows a "Sample events" notice; remove it when real events go in. `RSVP_URL` is empty, so RSVP buttons show a "RSVPs open soon" note.
+
+A separate landing page (split hero + link tiles) was built and then removed at Melissa's request; it is in git history (commit bd4f41b) if it's ever wanted again.
 
 ## The model
 - Funnel stages (index order matters everywhere): 0 Volume, 1 Repeated Exposure, 2 Integration, 3 Deepen.
@@ -24,9 +29,6 @@ Navy `#1B2A4A`, bg `#FFF9F4`, tomato `#FF5A3C`, dark red `#C8361B`, peach `#FF8A
 ## Wiring still to do
 - `PLAYBOOK_URL` (top of the script) is empty, so the CTA shows an "almost ready" message. Set it to the checkout link.
 - No email capture, analytics or backend yet.
-
-## Landing page (`index.html`)
-The homepage. Single self-contained file like the quiz, same design tokens, English only for now. Layout mirrors a reference site Melissa liked: full-screen peach hero on the left (brand, huge uppercase headline, funnel art, status line + square navy block button), and a sticky right rail (22% width, ≥900px) of five full-height link tiles: Quiz (white → `quiz.html`), Playbook (tomato → `#offers`), Workshops (cream → `#workshops`), About (navy → `#about`), FAQ (dark red → `#faq`). Below 900px the rail becomes a tile grid under the hero. Sections below the hero use max 1080px. Every quiz button links to `quiz.html`. Funnel art is a copy of `funnelSVG` with all four leaks shown; keep the two in step if the art changes. `PLAYBOOK_URL` and `WORKSHOP_URL` at the top of its script are empty, so their buttons show "coming soon" notes. The About section has a placeholder "M" avatar and generic bio for Melissa to replace. Do not add testimonials until there are real ones.
 
 ## Conventions
 - Brand wordmark: "The Friendship Funnel Quiz". Nicknames render in quotes: You're "The Compartmentalizer" (inner quotes become single).

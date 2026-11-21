@@ -1,7 +1,7 @@
 // Plays the whole quiz for several goals and languages; fails on JS errors or wrong leak.
 const { chromium } = require('playwright');
 const path = require('path');
-const url = 'file://' + path.resolve(__dirname, '../quiz.html');
+const url = 'file://' + path.resolve(__dirname, '../index.html');
 const low = (from) => (k) => (k >= from && k < from + 5 ? 1 : 4);
 const cases = [
   { goal: 1, lang: 'en', answer: low(5),  expect: 'Repeated Exposure' },

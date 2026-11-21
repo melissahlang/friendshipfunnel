@@ -1,4 +1,4 @@
-# The 20 questions (English source of truth; Thai/Chinese live in `TXT.th` / `TXT.zh` in quiz.html)
+# The 20 questions (English source of truth; Thai/Chinese live in `TXT.th` / `TXT.zh` in index.html)
 
 Scale: 1 = "Rarely / Not like me" … 5 = "Consistently / Very true". Each stage scores 5–25.
 
