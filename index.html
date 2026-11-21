@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Melly · Make Real Friends in Bangkok</title>
+<title>The Friendship Funnel · Make Real Friends in Bangkok</title>
 <meta name="description" content="Friendship workshops, a playbook and a free 3-minute quiz for expats and remote workers in Bangkok. Find where your friendships leak and fix it.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
 <style>
@@ -43,19 +43,20 @@ section,[id]{scroll-margin-top:24px}
 .hero>*{position:relative}
 .brand{font-size:22px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;align-self:flex-start}
 .brand svg{flex:none}
-.hero h1{margin-top:26px;font-size:clamp(40px,11vw,96px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase}
-.funnel{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 0}
-.funnel svg{width:clamp(220px,min(60vw,42vh),360px);height:auto;display:block;overflow:visible;font-family:"Outfit",sans-serif}
-.hbot{display:flex;flex-direction:column;gap:18px}
-.status{margin:0;font-size:18px;line-height:1.5;max-width:440px}
-.status b{font-weight:800}
+.hgrid{flex:1;display:grid;gap:28px;align-items:center;padding-top:28px}
+.hero h1{font-size:clamp(40px,11vw,96px);line-height:.95;letter-spacing:-.04em;text-transform:uppercase}
+.stk{display:inline-block;background:var(--white);color:var(--coral-d);border:2px solid var(--ink);border-radius:14px;padding:.04em .16em 0;line-height:1;transform:rotate(-3deg);box-shadow:5px 5px 0 var(--ink);margin-top:.12em}
+.hsub{margin:22px 0 0;font-size:18px;line-height:1.5;max-width:500px}
+.hcta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:26px}
+.hcta small{font-size:14px;font-weight:700}
+.funnel svg{width:100%;max-width:380px;height:auto;display:block;margin:0 auto;overflow:visible;font-family:"Outfit",sans-serif}
 .block{display:inline-flex;align-items:center;justify-content:center;min-height:60px;padding:10px 30px;background:var(--ink);color:var(--bg);border:2px solid var(--ink);font-weight:700;font-size:18px;text-decoration:none;text-align:center;transition:background .15s,color .15s}
 .block:hover{background:var(--bg);color:var(--ink)}
 @media (min-width:900px){
  .hero{padding:32px 44px 36px}
- .hero h1{margin:24px 0 0 12%;font-size:clamp(48px,min(6vw,9vh),92px)}
- .funnel{padding:16px 0}
- .hbot{flex-direction:row;align-items:center;gap:36px}
+ .hgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;padding-top:0}
+ .hero h1{font-size:clamp(40px,min(3.6vw,8vh),72px)}
+ .funnel svg{width:100%;max-width:560px;max-height:80vh}
 }
 
 /* link tiles */
@@ -158,13 +159,58 @@ footer small{display:block;width:100%;color:var(--mut2);font-size:13px}
  <i class="blob"></i><i class="blob2"></i>
  <a class="brand" href="#top">
   <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M2 4h22l-6 10h-10z" fill="#FF5A3C" stroke="#1B2A4A" stroke-width="2" stroke-linejoin="round"/><path d="M9 15h8l-2 7h-4z" fill="#1B2A4A"/></svg>
-  <span>Melly</span>
+  <span>The Friendship Funnel</span>
  </a>
- <h1>Making friends <br>shouldn’t be <br>this hard</h1>
- <div class="funnel" id="funnel"></div>
- <div class="hbot">
-  <p class="status"><b>Free quiz. 3 minutes, no sign-up.</b> Find where your friendships leak, for expats and remote workers in Bangkok.</p>
-  <a class="block" href="quiz.html">Find my friendship leak</a>
+ <div class="hgrid">
+  <div>
+   <h1>Making friends <br>shouldn’t be <br>this <span class="stk">hard</span></h1>
+   <p class="hsub">And actually, you’re probably not bad at it. There’s probably one step in friend-making you could tweak to make your social circle a little more satisfying. Find out which one here.</p>
+   <div class="hcta">
+    <a class="block" href="quiz.html">Find my friendship leak</a>
+    <small>Free quiz · 3 minutes · no sign-up</small>
+   </div>
+  </div>
+  <div class="funnel">
+   <svg viewBox="0 20 520 545" role="img" aria-label="The Friendship Funnel: four steps from new people to real friends. 1 Volume, meet new people. 2 Repeated Exposure, see them again. 3 Integration, mix up settings. 4 Deepen, open up. A magnifying glass asks which step is yours.">
+    <text x="240" y="48" text-anchor="middle" font-size="17" font-weight="700" fill="#1B2A4A">new people</text>
+    <path d="M240 56v18m-7-7l7 7 7-7" fill="none" stroke="#1B2A4A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <g stroke="#1B2A4A" stroke-width="3" stroke-linejoin="round">
+     <polygon points="40,90 440,90 401,168 79,168" fill="#FF5A3C"/>
+     <polygon points="79,168 401,168 362.5,245 117.5,245" fill="#FFB8A6"/>
+     <polygon points="117.5,245 362.5,245 323.5,323 156.5,323" fill="#FFE3D8"/>
+     <polygon points="156.5,323 323.5,323 285,400 195,400" fill="#FFFFFF"/>
+     <polygon points="195,400 285,400 264,440 216,440" fill="#1B2A4A"/>
+     <ellipse cx="240" cy="90" rx="200" ry="14" fill="#FFF9F4"/>
+    </g>
+    <g fill="#1B2A4A" text-anchor="middle">
+     <text x="240" y="135" font-size="23" font-weight="800">Volume</text>
+     <text x="240" y="156" font-size="14" font-weight="500">meet new people</text>
+     <text x="240" y="208" font-size="20" font-weight="800">Repeated Exposure</text>
+     <text x="240" y="229" font-size="14" font-weight="500">see them again</text>
+     <text x="240" y="285" font-size="20" font-weight="800">Integration</text>
+     <text x="240" y="306" font-size="14" font-weight="500">mix up settings</text>
+     <text x="240" y="361" font-size="19" font-weight="800">Deepen</text>
+     <text x="240" y="381" font-size="14" font-weight="500">open up</text>
+    </g>
+    <g stroke="#1B2A4A" stroke-width="2.5" fill="#FFF9F4">
+     <circle cx="30" cy="129" r="15"/><circle cx="69" cy="206" r="15"/><circle cx="108" cy="284" r="15"/><circle cx="147" cy="362" r="15"/>
+    </g>
+    <g fill="#1B2A4A" text-anchor="middle" font-size="16" font-weight="800">
+     <text x="30" y="135">1</text><text x="69" y="212">2</text><text x="108" y="290">3</text><text x="147" y="368">4</text>
+    </g>
+    <g class="pulse">
+     <line x1="413" y1="230" x2="444" y2="262" stroke="#1B2A4A" stroke-width="9" stroke-linecap="round"/>
+     <circle cx="392" cy="208" r="30" fill="#FFFFFF" fill-opacity=".45" stroke="#1B2A4A" stroke-width="5"/>
+     <rect x="420" y="268" width="96" height="32" rx="16" fill="#FFFFFF" stroke="#1B2A4A" stroke-width="2"/>
+     <text x="468" y="290" text-anchor="middle" font-size="16" font-weight="800" fill="#C8361B">yours?</text>
+    </g>
+    <path transform="translate(240 470)" d="M0 8C-13 -2 -10 -15 0 -8C10 -15 13 -2 0 8Z" fill="#FF5A3C" stroke="#1B2A4A" stroke-width="2"/>
+    <g stroke="#1B2A4A" stroke-width="2.5"><circle cx="222" cy="510" r="17" fill="#FF5A3C"/><circle cx="258" cy="510" r="17" fill="#FFB8A6"/></g>
+    <g fill="#1B2A4A"><circle cx="217" cy="507" r="2"/><circle cx="227" cy="507" r="2"/><circle cx="253" cy="507" r="2"/><circle cx="263" cy="507" r="2"/></g>
+    <g fill="none" stroke="#1B2A4A" stroke-width="2" stroke-linecap="round"><path d="M215 514q7 6 14 0"/><path d="M251 514q7 6 14 0"/></g>
+    <text x="240" y="556" text-anchor="middle" font-size="18" font-weight="800" fill="#1B2A4A">real friends</text>
+   </svg>
+  </div>
  </div>
 </header>
 
@@ -280,7 +326,7 @@ footer small{display:block;width:100%;color:var(--mut2);font-size:13px}
 
 <footer>
  <div class="wrap">
-  <a class="brand" href="#">Melly</a>
+  <a class="brand" href="#top">The Friendship Funnel</a>
   <nav aria-label="Footer">
    <a href="quiz.html">The quiz</a>
    <a href="#offers">Workshops &amp; playbook</a>
@@ -306,25 +352,5 @@ wire("pb",PLAYBOOK_URL,"The playbook is almost ready. Check back very soon.");
 wire("ws",WORKSHOP_URL,"New dates are coming soon. Take the quiz in the meantime!");
 document.getElementById("yr").textContent=new Date().getFullYear();
 
-
-// Same funnel illustration as the quiz start page (quiz.html funnelSVG)
-(function(){
- var K='#1B2A4A',drop='M0 -14C6 -4 9 2 9 6A9 9 0 0 1 -9 6C-9 2 -6 -4 0 -14Z',p1='',p2='',drops='',pills='';
- [[150,40,'#FF8A6E'],[205,22,'#FFE3D8'],[262,48,'#FF5A3C'],[318,26,'#FFB8A6'],[365,52,'#FFF9F4']].forEach(function(p){var x=p[0],y=p[1];
-  p1+='<circle cx="'+x+'" cy="'+y+'" r="13" fill="'+p[2]+'"/>';
-  p2+='<circle cx="'+(x-4)+'" cy="'+(y-2)+'" r="1.8"/><circle cx="'+(x+4)+'" cy="'+(y-2)+'" r="1.8"/><path d="M'+(x-5)+' '+(y+3)+'q5 4 10 0" fill="none" stroke="'+K+'" stroke-width="1.8" stroke-linecap="round"/>'});
- [[442,150,1],[456,182,.6],[80,228,1],[66,258,.6],[364,306,1],[376,336,.6],[156,384,1],[144,414,.6]].forEach(function(d){drops+='<path transform="translate('+d[0]+' '+d[1]+')'+(d[2]<1?' scale(.6)':'')+'" d="'+drop+'"/>'});
- [[462,128],[-36,196],[386,284],[56,350]].forEach(function(q,k){pills+='<g'+(k===1?' class="pulse"':'')+'><rect x="'+q[0]+'" y="'+q[1]+'" width="58" height="28" rx="14" fill="'+(k===1?'#FFFFFF':'#FFF9F4')+'" stroke="'+K+'" stroke-width="2"/><text x="'+(q[0]+29)+'" y="'+(q[1]+19)+'" fill="'+K+'">leak?</text></g>'});
- document.getElementById("funnel").innerHTML='<svg viewBox="-40 0 560 560" role="img" aria-label="A funnel with four stages: Volume, Repeated Exposure, Integration and Deepen. People drop in at the top, drips leak out the sides, and two friends come out the bottom.">'
- +'<g stroke="'+K+'" stroke-width="2.5">'+p1+'</g><g fill="'+K+'">'+p2+'</g>'
- +'<g stroke="'+K+'" stroke-width="3" stroke-linejoin="round"><polygon points="40,90 440,90 401,168 79,168" fill="#FF5A3C"/><polygon points="79,168 401,168 362.5,245 117.5,245" fill="#FF8A6E"/><polygon points="117.5,245 362.5,245 323.5,323 156.5,323" fill="#FFB8A6"/><polygon points="156.5,323 323.5,323 285,400 195,400" fill="#FFE3D8"/><polygon points="195,400 285,400 264,440 216,440" fill="'+K+'"/><ellipse cx="240" cy="90" rx="200" ry="20" fill="#FFF9F4"/></g>'
- +'<g fill="'+K+'" text-anchor="middle" font-weight="700"><text x="240" y="137" font-size="22">Volume</text><text x="240" y="214" font-size="19">Repeated Exposure</text><text x="240" y="291" font-size="19">Integration</text><text x="240" y="368" font-size="18">Deepen</text></g>'
- +'<g fill="'+K+'">'+drops+'</g><g font-size="15" font-weight="700" text-anchor="middle">'+pills+'</g>'
- +'<path transform="translate(240 468)" d="M0 8C-13 -2 -10 -15 0 -8C10 -15 13 -2 0 8Z" fill="#FF5A3C" stroke="'+K+'" stroke-width="2"/>'
- +'<g stroke="'+K+'" stroke-width="2.5"><circle cx="222" cy="508" r="17" fill="#FF5A3C"/><circle cx="258" cy="508" r="17" fill="#FFB8A6"/></g>'
- +'<g fill="'+K+'"><circle cx="217" cy="505" r="2"/><circle cx="227" cy="505" r="2"/><circle cx="253" cy="505" r="2"/><circle cx="263" cy="505" r="2"/></g>'
- +'<g fill="none" stroke="'+K+'" stroke-width="2" stroke-linecap="round"><path d="M215 512q7 6 14 0"/><path d="M251 512q7 6 14 0"/></g>'
- +'<text x="240" y="550" text-anchor="middle" font-size="18" font-weight="700" fill="'+K+'">real friends</text></svg>';
-})();
 </script>
 </body></html>
