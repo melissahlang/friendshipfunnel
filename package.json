@@ -1,0 +1,9 @@
+{
+  "name": "friendship-funnel-quiz",
+  "private": true,
+  "scripts": {
+    "serve": "python3 -m http.server 8080",
+    "test": "node tests/smoke.js"
+  },
+  "devDependencies": { "playwright": "^1.48.0" }
+}
